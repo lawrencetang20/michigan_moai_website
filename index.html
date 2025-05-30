@@ -1,19 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>My Nonprofit</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1>Welcome to Our Nonprofit</h1>
-  <p>We serve the community through outreach and education.</p>
+  <header>
+    <div class="container">
+      <h1>My Nonprofit</h1>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#programs">Programs</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
 
-  <h2>Contact Us</h2>
-  <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-    <input name="name" placeholder="Your Name" required><br>
-    <input name="email" type="email" placeholder="Your Email" required><br>
-    <textarea name="message" placeholder="Your Message" required></textarea><br>
-    <button type="submit">Send</button>
-  </form>
+  <section class="hero">
+    <div class="container">
+      <h2>Supporting Our Community Through Mental Health and Outreach</h2>
+    </div>
+  </section>
+
+  <section id="about" class="section">
+    <div class="container">
+      <h2>Our Mission</h2>
+      <p>We aim to empower communities through accessible mental health support, education, and culturally informed resources.</p>
+    </div>
+  </section>
+
+  <section id="programs" class="section">
+    <div class="container">
+      <h2>Programs</h2>
+      <ul>
+        <li>Free therapy referral service</li>
+        <li>Community outreach workshops</li>
+        <li>Language-accessible resources</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="contact" class="section">
+    <div class="container">
+      <h2>Contact Us</h2>
+      <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <input name="name" placeholder="Your Name" required /><br />
+        <input name="email" type="email" placeholder="Your Email" required /><br />
+        <textarea name="message" placeholder="Your Message" required></textarea><br />
+        <button type="submit">Send</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 My Nonprofit Organization</p>
+    </div>
+  </footer>
 </body>
 </html>
