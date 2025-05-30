@@ -1,63 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Nonprofit</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Asian Mental Health Collective</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
   <header>
-    <div class="container">
-      <h1>My Nonprofit</h1>
+    <div class="top-bar">
+      <div class="logo">LOGO</div>
       <nav>
-        <a href="#about">About</a>
-        <a href="#programs">Programs</a>
-        <a href="#contact">Contact</a>
+        <ul class="menu">
+          <li><a href="#">Home</a></li>
+          <li class="dropdown">
+            <a href="#">About</a>
+            <ul class="dropdown-menu">
+              <li><a href="#mission">Mission</a></li>
+              <li><a href="#team">Our Team</a></li>
+              <li><a href="#faq">FAQ</a></li>
+            </ul>
+          </li>
+          <li><a href="#programs">Programs</a></li>
+          <li><a href="#donate">Donate</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
       </nav>
     </div>
   </header>
 
   <section class="hero">
-    <div class="container">
-      <h2>Supporting Our Community Through Mental Health and Outreach</h2>
+    <div class="hero-text">
+      <h1>We Normalize and De-stigmatize Mental Health Within the Asian Community</h1>
+      <p>Join our mission to uplift mental wellness and increase access to support and education.</p>
+      <a href="#donate" class="btn">Donate Now</a>
     </div>
   </section>
 
-  <section id="about" class="section">
-    <div class="container">
-      <h2>Our Mission</h2>
-      <p>We aim to empower communities through accessible mental health support, education, and culturally informed resources.</p>
-    </div>
+  <section id="mission" class="section">
+    <h2>Our Mission</h2>
+    <p>To normalize and de-stigmatize mental health within the Asian community by making mental health easily available, approachable, and accessible.</p>
   </section>
 
   <section id="programs" class="section">
-    <div class="container">
-      <h2>Programs</h2>
-      <ul>
-        <li>Free therapy referral service</li>
-        <li>Community outreach workshops</li>
-        <li>Language-accessible resources</li>
-      </ul>
-    </div>
+    <h2>Programs</h2>
+    <ul>
+      <li>Meet Our Therapists Directory</li>
+      <li>Community Facebook Groups</li>
+      <li>Asians Do Therapy Livestreams</li>
+    </ul>
+  </section>
+
+  <section id="team" class="section">
+    <h2>Our Team</h2>
+    <p>Our team is made up of passionate volunteers and mental health professionals committed to supporting the Asian community.</p>
+  </section>
+
+  <section id="faq" class="section">
+    <h2>Frequently Asked Questions</h2>
+    <p>Find answers to common questions about mental health and how to get involved with our organization.</p>
+  </section>
+
+  <section id="donate" class="section">
+    <h2>Donate</h2>
+    <p>Your donations help us maintain our programs and expand our reach. Every contribution makes a difference.</p>
+    <a href="#" class="btn">Contribute Now</a>
   </section>
 
   <section id="contact" class="section">
-    <div class="container">
-      <h2>Contact Us</h2>
-      <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-        <input name="name" placeholder="Your Name" required /><br />
-        <input name="email" type="email" placeholder="Your Email" required /><br />
-        <textarea name="message" placeholder="Your Message" required></textarea><br />
-        <button type="submit">Send</button>
-      </form>
-    </div>
+    <h2>Contact Us</h2>
+    <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+      <input name="name" placeholder="Your Name" required><br>
+      <input name="email" type="email" placeholder="Your Email" required><br>
+      <textarea name="message" placeholder="Your Message" required></textarea><br>
+      <button type="submit">Send</button>
+    </form>
   </section>
 
   <footer>
-    <div class="container">
-      <p>&copy; 2025 My Nonprofit Organization</p>
-    </div>
+    <p>&copy; 2025 Asian Mental Health Collective. All rights reserved.</p>
   </footer>
 </body>
 </html>
