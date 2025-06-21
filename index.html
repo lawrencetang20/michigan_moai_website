@@ -1,1 +1,115 @@
-<html>...Home Page (already provided)...</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>About Us – Michigan Moai</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <header>
+    <div class="top-bar">
+      <div class="logo">
+        <img src="logo.png" alt="Michigan Moai Logo">
+        <span class="brand-text"><strong>michigan</strong><br><span class="moai">moai</span></span>
+      </div>
+      <nav>
+        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+        <ul class="menu" id="menu">
+          <li><a href="index.html" class="active">About Us</a></li>
+          <li class="has-dropdown">
+            <a href="therapist.html">Therapist Directory</a>
+            <ul class="dropdown">
+              <li><a href="therapist.html">Michigan</a></li>
+              <li><a href="therapist.html">PSYPACT States</a></li>
+            </ul>
+          </li>
+          <li class="has-dropdown">
+            <a href="psypact.html">PSYPACT Lab</a>
+            <ul class="dropdown">
+              <li><a href="psypact.html">Overview</a></li>
+              <li><a href="psypact.html">How It Works</a></li>
+            </ul>
+          </li>
+          <li class="has-dropdown">
+            <a href="projects.html">Projects</a>
+            <ul class="dropdown">
+              <li><a href="projects.html#healing">Healing from Hate</a></li>
+              <li><a href="projects.html#mentorship">P2P Mentorship</a></li>
+            </ul>
+          </li>
+          <li class="has-dropdown">
+            <a href="resources.html">Resources</a>
+            <ul class="dropdown">
+              <li><a href="resources.html">Materials</a></li>
+              <li><a href="resources.html">Links</a></li>
+            </ul>
+          </li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Welcome to Michigan Moai</h1>
+      <p>Your partner in culturally-competent mental health support.</p>
+    </div>
+  </section>
+
+  <section class="section bg-light">
+    <h2>Our Mission</h2>
+    <p>We bridge language and cultural gaps by connecting AANHPI victims of hate with therapists who speak their language and understand their experience.</p>
+  </section>
+
+  <section class="section">
+    <h2>Key Impact Areas</h2>
+    <div class="card-grid">
+      <div class="card">
+        <i class="fa-solid fa-hands-helping"></i>
+        <h3>Trauma Support</h3>
+        <p>Therapy sessions tailored for hate crime survivors.</p>
+      </div>
+      <div class="card">
+        <i class="fa-solid fa-globe"></i>
+        <h3>Multi-State Reach</h3>
+        <p>Leveraging PSYPACT to serve clients across 42 states.</p>
+      </div>
+      <div class="card">
+        <i class="fa-solid fa-user-friends"></i>
+        <h3>Peer Mentorship</h3>
+        <p>Training AAPI youth to support one another.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-light">
+    <h2>Image Gallery</h2>
+    <div class="gallery">
+      <img src="gallery1.jpg" alt="">
+      <img src="gallery2.jpg" alt="">
+      <img src="gallery3.jpg" alt="">
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Michigan Moai   |   Supported by MAPAAC</p>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('menu').classList.toggle('show');
+    }
+    document.querySelectorAll('.has-dropdown > a').forEach(el => {
+      el.addEventListener('click', e => {
+        if (window.innerWidth <= 768) {
+          e.preventDefault();
+          el.nextElementSibling.classList.toggle('show');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
