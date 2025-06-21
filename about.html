@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Us — Michigan Moai</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <!-- HEADER (same on all pages) -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand">
+        <img src="logo.png" alt="Michigan Moai Logo"/>
+        <span class="brand-text">Michigan Moai</span>
+      </a>
+      <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
+      <nav class="site-nav">
+        <ul>
+          <li><a href="index.html"    class="nav-link home">Home</a></li>
+          <li><a href="therapist.html"class="nav-link therapist">Therapist Directory</a></li>
+          <li><a href="psypact.html"  class="nav-link psypact">PSYPACT</a></li>
+          <li><a href="projects.html" class="nav-link projects">Projects</a></li>
+          <li><a href="about.html"    class="nav-link about active">About Us</a></li>
+          <li><a href="contact.html"  class="nav-link contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <!-- /HEADER -->
+
+  <main class="container content about">
+    <h1>Meet Our Team</h1>
+
+    <ul class="people-list">
+      <li class="person-card reveal" data-person="elizabeth">
+        <img src="elizabeth.png" alt="Photo of Elizabeth Amata" class="person-img"/>
+        <div class="person-info">
+          <h2>Elizabeth Amata</h2>
+          <p>Email: <a href="mailto:elizabeth@example.com">elizabeth@example.com</a></p>
+          <p>Phone: (123) 456-7890</p>
+        </div>
+      </li>
+
+      <li class="person-card reveal" data-person="another">
+        <img src="another.png" alt="Photo of Another Person" class="person-img"/>
+        <div class="person-info">
+          <h2>Another Person</h2>
+          <p>Email: <a href="mailto:another@example.com">another@example.com</a></p>
+          <p>Phone: (234) 567-8901</p>
+        </div>
+      </li>
+
+      <!-- Add more entries here, with matching data-person values -->
+    </ul>
+  </main>
+
+  <!-- MODALS (one per person) -->
+  <div id="modal-elizabeth" class="modal">
+    <div class="modal-content">
+      <span class="close" data-close="modal-elizabeth">&times;</span>
+      <h2>Elizabeth Amata</h2>
+      <p>Elizabeth founded Michigan Moai to bridge cultural gaps in mental health access. With a background in community outreach and counseling psychology, she ensures everyone finds a therapist who truly understands their story.</p>
+    </div>
+  </div>
+
+  <div id="modal-another" class="modal">
+    <div class="modal-content">
+      <span class="close" data-close="modal-another">&times;</span>
+      <h2>Another Person</h2>
+      <p>Another Person leads our peer‐mentorship program, designing workshops and trainings that empower AAPI youth to support each other and break down mental health stigma in schools.</p>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2025 Michigan Moai</p>
+    </div>
+  </footer>
+
+  <script src="main.js" defer></script>
+</body>
+</html>

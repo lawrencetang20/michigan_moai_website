@@ -1,50 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1.0">
-  <title>Contact – Michigan Moai</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact — Michigan Moai</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-<header>
-  <div class="top-bar">
-    <div class="logo">
-      <img src="logo.png" alt="Michigan Moai Logo">
-      <span class="brand-text"><strong>michigan</strong><br><span class="moai">moai</span></span>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand">
+        <img src="logo.png" alt="Michigan Moai Logo"/>
+        <span class="brand-text">Michigan Moai</span>
+      </a>
+      <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
+      <nav class="site-nav">
+        <ul>
+          <li><a href="index.html" class="nav-link home">Home</a></li>
+          <li><a href="therapist.html" class="nav-link therapist">Therapist Directory</a></li>
+          <li><a href="psypact.html" class="nav-link psypact">PSYPACT</a></li>
+          <li><a href="projects.html" class="nav-link projects">Projects</a></li>
+          <li><a href="about.html" class="nav-link about">About Us</a></li>
+          <li><a href="contact.html" class="nav-link contact active">Contact</a></li>
+        </ul>
+      </nav>
     </div>
-    <nav>
-      <button class="menu-toggle" onclick="toggleMenu()">☰</button>
-      <ul class="menu" id="menu">
-        <li><a href="index.html" class="">About Us</a></li>
-        <li><a href="therapist.html" class="">Therapist Directory</a></li>
-        <li><a href="psypact.html" class="">PSYPACT Lab</a></li>
-        <li><a href="projects.html" class="">Projects</a></li>
-        <li><a href="resources.html" class="">Resources</a></li>
-        <li><a href="contact.html" class="active">Contact</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
+  </header>
+  <!-- /HEADER -->
 
-<section class="section">
-  <h2>Contact Us</h2>
-  <form action="https://formspree.io/f/xrbkzllq" method="POST">
-    <input name="name" placeholder="Your Name" required><br>
-    <input name="email" type="email" placeholder="Your Email" required><br>
-    <textarea name="message" placeholder="Your Message" required></textarea><br>
-    <button type="submit">Send</button>
-  </form>
-</section>
+  <main class="container content contact">
+    <h1>Contact Us</h1>
+    <p><strong>Email:</strong> you@example.com</p>
+    <p><strong>Phone:</strong> (555) 123-4567</p>
+    <p><strong>Address:</strong> 1234 Wellness Way, Ann Arbor, MI 48104</p>
+  </main>
 
-<footer>
-  <p>&copy; 2025 Michigan Moai   |   Supported by MAPAAC</p>
-</footer>
-<script>
-  function toggleMenu() {
-    document.getElementById('menu').classList.toggle('show');
-  }
-</script>
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2025 Michigan Moai</p>
+    </div>
+  </footer>
+
+  <script src="main.js" defer></script>
 </body>
 </html>
