@@ -16,7 +16,7 @@ html {
   scroll-behavior: smooth;
 }
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Comfortaa', Arial, Helvetica, sans-serif;
   color: var(--clr-dark);
   background: var(--clr-light);
   line-height: 1.6;
@@ -149,7 +149,7 @@ a { text-decoration: none; }
    FOOTER
    —————————————————————————— */
 .site-footer {
-  background: var(--clr-dark);
+  background: #226c2d; /* dark green */
   color: var(--clr-light);
   text-align: center;
   padding: 2rem 0;
@@ -313,3 +313,241 @@ a { text-decoration: none; }
   color: var(--clr-primary);
 }
 
+/* ...existing code... */
+
+/* Dropdown menu styles */
+.dropdown {
+  position: relative;
+}
+.dropdown > a:after {
+  content: " ▼";
+  font-size: 0.7em;
+}
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: var(--clr-light);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  list-style: none;
+  padding: 0.5rem 0;
+  min-width: 160px;
+  z-index: 1002;
+}
+.dropdown-menu li {
+  width: 100%;
+}
+.dropdown-menu a {
+  display: block;
+  padding: 0.5rem 1rem;
+  color: var(--clr-dark);
+  background: none;
+  border-radius: 0;
+  font-weight: 400;
+}
+.dropdown-menu.show {
+  display: block;
+}
+.site-nav .dropdown-menu a:hover,
+.site-nav .dropdown-menu .active {
+  background: var(--clr-primary);
+  color: var(--clr-light);
+}
+.dropdown-menu {
+  display: none;
+}
+
+/* only show when toggled on */
+.dropdown-menu.show {
+  display: block;
+}
+
+/* Responsive: stack dropdown on mobile */
+@media (min-width: 769px) {
+  .dropdown:hover .dropdown-menu,
+  .dropdown:focus-within .dropdown-menu {
+    display: block;
+  }
+}
+
+/* --- HERO BAR --- */
+.hero-bar {
+  background: #fbeaec;
+  padding: 3rem 0 2rem 0;
+}
+.hero-bar-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.hero-bar-illustration img {
+  max-width: 320px;
+  width: 100%;
+  display: block;
+}
+.hero-bar-content {
+  text-align: center;
+}
+.hero-bar-content h1 {
+  color: #1a8c8c;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+.hero-bar-content p {
+  color: #444;
+  margin-bottom: 1.5rem;
+}
+.hero-bar-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+}
+.hero-bar-buttons .btn,
+.hero-bar-buttons .btn.outline {
+  width: 260px;
+  font-size: 1rem;
+}
+
+/* --- INFO BAR --- */
+.info-bar {
+  background: #7ed6df;
+  padding: 3rem 0 2rem 0;
+}
+.info-bar-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.info-bar-content {
+  text-align: center;
+}
+.info-bar-content h2 {
+  color: #fff;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+.info-bar-content em {
+  font-style: italic;
+}
+.info-bar-content u {
+  text-decoration: underline;
+}
+.info-bar-content p {
+  color: #fff;
+  font-size: 1.1rem;
+}
+.info-bar-illustration img {
+  max-width: 260px;
+  width: 100%;
+  display: block;
+}
+
+/* --- Responsive: stack vertically on mobile --- */
+@media (min-width: 700px) {
+  .hero-bar-inner,
+  .info-bar-inner {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+  }
+  .hero-bar-illustration,
+  .info-bar-illustration {
+    flex: 1 1 0;
+    display: flex;
+    justify-content: center;
+  }
+  .hero-bar-content,
+  .info-bar-content {
+    flex: 1 1 0;
+    text-align: left;
+    align-items: flex-start;
+  }
+  .hero-bar-buttons {
+    flex-direction: row;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+}
+
+/* Directory Bars */
+.directory-bar {
+  padding: 3rem 0 2rem 0;
+}
+.directory-bar-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+.directory-bar-illustration img {
+  max-width: 720px;
+  width: 100%;
+  display: block;
+}
+.directory-bar-content {
+  text-align: center;
+}
+.directory-bar-content h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: #226c2d;
+}
+.directory-bar-content p {
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+.therapist-bar {
+  background: #e4f7e0; /* light green */
+}
+.legal-bar {
+  background: #b6e2c6; /* slightly darker green */
+}
+@media (min-width: 700px) {
+  .directory-bar-inner {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+  }
+  .directory-bar-illustration {
+    flex: 1 1 0;
+    display: flex;
+    justify-content: center;
+  }
+  .directory-bar-content {
+    flex: 1 1 0;
+    text-align: left;
+    align-items: flex-start;
+  }
+}
+
+/* Make the therapist bar image larger */
+.therapist-bar .directory-bar-illustration img {
+  max-width: 900px;
+  width: 100%;
+}
+
+.about-bar {
+  background: #e4f7e0; /* same as therapist bar */
+}
+.elizabeth-bar {
+  background: #fbeaec; /* light pink, or pick any color you like */
+}
+.lawrence-bar {
+  background: #e0f2ef; /* light teal, or pick any color you like */
+}
+.team-bar .directory-bar-content h2 {
+  margin-top: 0;
+}

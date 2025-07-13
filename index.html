@@ -4,11 +4,10 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Michigan Moai</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;600;700&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-
   <!-- HEADER -->
   <header class="site-header">
     <div class="container header-inner">
@@ -20,34 +19,50 @@
       <nav class="site-nav">
         <ul>
           <li><a href="index.html" class="nav-link home active">Home</a></li>
-          <li><a href="therapist.html" class="nav-link therapist">Therapist Directory</a></li>
-          <li><a href="psypact.html" class="nav-link psypact">PSYPACT</a></li>
+          <li class="dropdown">
+            <a href="therapist.html" class="nav-link directory">Directory</a>
+            <ul class="dropdown-menu">
+              <li><a href="therapist.html">Therapist</a></li>
+              <li><a href="legal.html">Legal</a></li>
+            </ul>
+          </li>
           <li><a href="projects.html" class="nav-link projects">Projects</a></li>
           <li><a href="about.html" class="nav-link about">About Us</a></li>
-          <li><a href="contact.html" class="nav-link contact">Contact</a></li>
         </ul>
       </nav>
     </div>
   </header>
   <!-- /HEADER -->
-
+<!-- ...existing code... -->
   <main>
-    <section class="hero reveal">
-      <div class="container hero-grid">
-        <div class="hero-card reveal">
-          <h2>Michigan Therapist Directory</h2>
-          <p>Find culturally-competent, Asian-focused therapists in Michigan.</p>
-          <a href="therapist.html" class="btn">Find an Asian Therapist</a>
-          <a href="psypact.html" class="btn outline">Find a PSYPACT Therapist</a>
+    <!-- Therapist Directory Bar -->
+    <section class="directory-bar therapist-bar">
+      <div class="directory-bar-inner">
+        <div class="directory-bar-illustration">
+          <img src="therapist_bar.png" alt="Therapist illustration" />
         </div>
-        <div class="hero-card reveal">
-          <h2>Learn the Importance of Asian Mental Health</h2>
-          <p>Michigan Moai strives to make mental health counseling accessible to Asian American and Asian immigrant communities.</p>
-          <a href="about.html" class="btn">Learn More</a>
+        <div class="directory-bar-content">
+          <h1>Find a Therapist</h1>
+          <p>Access our curated directory of culturally competent, Asian-focused therapists in Michigan and PSYPACT states.</p>
+          <a href="therapist.html" class="btn">View Therapist Directory</a>
+        </div>
+      </div>
+    </section>
+    <!-- Legal Directory Bar -->
+    <section class="directory-bar legal-bar">
+      <div class="directory-bar-inner">
+        <div class="directory-bar-illustration">
+          <img src="legal_bar.png" alt="Legal illustration" />
+        </div>
+        <div class="directory-bar-content">
+          <h1>Find Legal Services</h1>
+          <p>Explore legal resources and providers who understand the needs of Michigan’s Asian communities.</p>
+          <a href="legal.html" class="btn outline">View Legal Directory</a>
         </div>
       </div>
     </section>
   </main>
+  <!-- ...existing code... -->
 
   <footer class="site-footer">
     <div class="container">

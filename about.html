@@ -4,12 +4,12 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>About Us — Michigan Moai</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;600;700&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
 
-  <!-- HEADER (same on all pages) -->
+  <!-- HEADER -->
   <header class="site-header">
     <div class="container header-inner">
       <a href="index.html" class="brand">
@@ -19,59 +19,102 @@
       <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
       <nav class="site-nav">
         <ul>
-          <li><a href="index.html"    class="nav-link home">Home</a></li>
-          <li><a href="therapist.html"class="nav-link therapist">Therapist Directory</a></li>
-          <li><a href="psypact.html"  class="nav-link psypact">PSYPACT</a></li>
-          <li><a href="projects.html" class="nav-link projects">Projects</a></li>
-          <li><a href="about.html"    class="nav-link about active">About Us</a></li>
-          <li><a href="contact.html"  class="nav-link contact">Contact</a></li>
+            <li><a href="index.html" class="nav-link home">Home</a></li>
+            <li class="dropdown">
+            <a href="therapist.html" class="nav-link directory">Directory</a>
+            <ul class="dropdown-menu">
+                <li><a href="therapist.html">Therapist</a></li>
+                <li><a href="legal.html">Legal</a></li>
+            </ul>
+            </li>
+            <li><a href="projects.html" class="nav-link projects">Projects</a></li>
+            <li><a href="about.html" class="nav-link about active">About Us</a></li>
         </ul>
       </nav>
     </div>
   </header>
   <!-- /HEADER -->
 
-  <main class="container content about">
-    <h1>Meet Our Team</h1>
+  <main>
+    <!-- About Michigan Moai Bar (full width) -->
+    <section class="directory-bar about-bar">
+      <div class="directory-bar-inner">
+        <div class="directory-bar-illustration">
+          <img src="about_us.png" alt="About Michigan Moai illustration" />
+        </div>
+        <div class="directory-bar-content">
+          <h1>About Michigan Moai</h1>
+          <p>
+            <strong>Michigan Moai</strong> is a nonprofit organization committed to supporting the mental health and well-being of AANHPI (Asian American, Native Hawaiian, and Pacific Islander) individuals across Michigan. Our mission is to ensure that those facing trauma, racism, or language barriers have access to culturally competent and linguistically appropriate mental health care.
+          </p>
+          <p>
+            The name “Moai” comes from a Japanese concept meaning “meeting for a common purpose.” Traditionally, moai are lifelong social support groups that offer emotional and financial assistance while creating a strong sense of belonging. At Michigan Moai, we embrace this philosophy by building networks of care that alleviate stress, promote healing, and serve as a safety net for our community.
+          </p>
+          <p>
+            We work to identify therapists across Michigan and PSYPACT states who speak AANHPI languages and have experience supporting trauma survivors. Our goal is to connect individuals to the right care through a searchable referral database for therapy sessions. Through strong community partnerships and a commitment to culturally responsive services, we aim to make mental health support more accessible and inclusive for all.
+          </p>
+        </div>
+      </div>
+    </section>
 
-    <ul class="people-list">
-      <li class="person-card reveal" data-person="elizabeth">
-        <img src="elizabeth.png" alt="Photo of Elizabeth Amata" class="person-img"/>
-        <div class="person-info">
+    <!-- Meet Our Team Bars -->
+    <section class="directory-bar team-bar elizabeth-bar">
+      <div class="directory-bar-inner">
+        <div class="directory-bar-illustration">
+          <img src="elizabeth.png" alt="Photo of Elizabeth Amata" class="person-img"/>
+        </div>
+        <div class="directory-bar-content">
           <h2>Elizabeth Amata</h2>
-          <p>Email: <a href="mailto:elizabeth@example.com">elizabeth@example.com</a></p>
-          <p>Phone: (123) 456-7890</p>
+          <p>Email: <a href="mailto:eliamata@bu.edu">eliamata@bu.edu</a></p>
+          <p>
+            Elizabeth is a senior undergraduate student earning her Bachelor of Arts in Psychology at Boston University. She is on the pre-law track and plans to pursue a Master of Social Work followed by law school, with the goal of advancing policy and advocacy for marginalized communities. In 2023, she founded Michigan Moai to expand access to mental health support for immigrant and refugee communities across Michigan, emphasizing culturally competent care and services in individuals’ native languages.
+          </p>
         </div>
-      </li>
+      </div>
+    </section>
 
-      <li class="person-card reveal" data-person="another">
-        <img src="another.png" alt="Photo of Another Person" class="person-img"/>
-        <div class="person-info">
-          <h2>Another Person</h2>
-          <p>Email: <a href="mailto:another@example.com">another@example.com</a></p>
-          <p>Phone: (234) 567-8901</p>
+    <section class="directory-bar team-bar lawrence-bar">
+      <div class="directory-bar-inner">
+        <div class="directory-bar-illustration">
+          <img src="another.png" alt="Photo of Lawrence Tang" class="person-img"/>
         </div>
-      </li>
-
-      <!-- Add more entries here, with matching data-person values -->
-    </ul>
+        <div class="directory-bar-content">
+          <h2>Lawrence Tang</h2>
+          <p>Email: <a href="mailto:lawrence.j.tang@gmail.com">lawrence.j.tang@gmail.com</a></p>
+          <p>
+            Lawrence is a senior undergraduate student at MIT studying CS. He runs the website maintenance.
+          </p>
+        </div>
+      </div>
+    </section>
   </main>
 
-  <!-- MODALS (one per person) -->
+  <!-- About Us Modal -->
+  <div id="about-modal" class="modal">
+    <div class="modal-content">
+      <span class="close" data-close="about-modal">&times;</span>
+      <h2>About Us</h2>
+      <p><strong>Michigan Moai</strong> is a nonprofit organization committed to supporting the mental health and well-being of AANHPI (Asian American, Native Hawaiian, and Pacific Islander) individuals across Michigan. Our mission is to ensure that those facing trauma, racism, or language barriers have access to culturally competent and linguistically appropriate mental health care.</p>
+      <p>The name “Moai” comes from a Japanese concept meaning “meeting for a common purpose.” Traditionally, moai are lifelong social support groups that offer emotional and financial assistance while creating a strong sense of belonging. At Michigan Moai, we embrace this philosophy by building networks of care that alleviate stress, promote healing, and serve as a safety net for our community.</p>
+      <p>We work to identify therapists across Michigan and PSYPACT states who speak AANHPI languages and have experience supporting trauma survivors. Our goal is to connect individuals to the right care through a searchable referral database for therapy sessions. Through strong community partnerships and a commitment to culturally responsive services, we aim to make mental health support more accessible and inclusive for all.</p>
+    </div>
+  </div>
+
+  <!-- Person Modals (unchanged) -->
   <div id="modal-elizabeth" class="modal">
     <div class="modal-content">
       <span class="close" data-close="modal-elizabeth">&times;</span>
       <h2>Elizabeth Amata</h2>
-      <p>Elizabeth founded Michigan Moai to bridge cultural gaps in mental health access. With a background in community outreach and counseling psychology, she ensures everyone finds a therapist who truly understands their story.</p>
-    </div>
+            Elizabeth is a senior undergraduate student earning her Bachelor of Arts in Psychology at Boston University. She is on the pre-law track and plans to pursue a Master of Social Work followed by law school, with the goal of advancing policy and advocacy for marginalized communities. In 2023, she founded Michigan Moai to expand access to mental health support for immigrant and refugee communities across Michigan, emphasizing culturally competent care and services in individuals’ native languages.
+            At Boston University, Elizabeth works as a research assistant in two labs. In the Family Development & Treatment Lab, she collaborates with MIT’s Gabrielli Lab on studies investigating how depression and the parent-child relationship affect brain development in children ages 7–12. She also conducts research in the Sexual, Reproductive, and Mental Health (SRM) Disparities Program, which explores the intersection of mental, sexual, and reproductive health in marginalized populations. The program aims to identify psychological barriers to care and develop culturally responsive interventions to improve health outcomes both locally and globally in South Africa.    </div>
   </div>
 
-  <div id="modal-another" class="modal">
+  <!-- Person Modals (unchanged) -->
+  <div id="modal-lawrence" class="modal">
     <div class="modal-content">
-      <span class="close" data-close="modal-another">&times;</span>
-      <h2>Another Person</h2>
-      <p>Another Person leads our peer‐mentorship program, designing workshops and trainings that empower AAPI youth to support each other and break down mental health stigma in schools.</p>
-    </div>
+      <span class="close" data-close="modal-lawrence">&times;</span>
+      <h2>Lawrence Tang</h2>
+            Lawrence is a senior undergraduate student at MIT studying CS. He runs the website maitenance. </div>
   </div>
 
   <footer class="site-footer">
