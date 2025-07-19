@@ -2,16 +2,15 @@
 <html lang="en">
 <head>
   <script>
-  (function() {
+  (function () {
     if (location.hostname === 'lawrencetang20.github.io') {
-      // strip the repo prefix and keep any path, query, or hash
       const prefix = '/michigan_moai_website';
       const newPath = location.pathname.startsWith(prefix)
-        ? location.pathname.slice(prefix.length)
-        : location.pathname;
-      const target = 'https://michiganmoai.org' + newPath +
-                    location.search + location.hash;
-      location.replace(target);   // 0‑history redirect
+                      ? location.pathname.slice(prefix.length)
+                      : location.pathname;
+      const target = 'https://michiganmoai.org'
+                    + newPath + location.search + location.hash;
+      location.replace(target);
     }
   })();
   </script>
