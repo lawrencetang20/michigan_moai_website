@@ -1,6 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>
+  (function() {
+    if (location.hostname === 'lawrencetang20.github.io') {
+      // strip the repo prefix and keep any path, query, or hash
+      const prefix = '/michigan_moai_website';
+      const newPath = location.pathname.startsWith(prefix)
+        ? location.pathname.slice(prefix.length)
+        : location.pathname;
+      const target = 'https://michiganmoai.org' + newPath +
+                    location.search + location.hash;
+      location.replace(target);   // 0‑history redirect
+    }
+  })();
+  </script>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Therapist Directory — Michigan Moai</title>
