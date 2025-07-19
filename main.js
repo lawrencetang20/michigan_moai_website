@@ -1,13 +1,13 @@
 // main.js
 
-// — toggle mobile nav (unchanged) —
+// — toggle mobile nav —
 const menuToggle = document.querySelector('.menu-toggle');
 const navMenu    = document.querySelector('.site-nav ul');
 menuToggle.addEventListener('click', () => {
   navMenu.classList.toggle('show');
 });
 
-// — scroll reveal (unchanged) —
+// — scroll reveal —
 const reveals = document.querySelectorAll('.reveal');
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
