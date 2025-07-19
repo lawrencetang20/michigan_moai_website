@@ -149,11 +149,11 @@ a { text-decoration: none; }
    FOOTER
    —————————————————————————— */
 .site-footer {
-  background: #226c2d; /* dark green */
+  background: #68B047; /* dark green */
   color: var(--clr-light);
   text-align: center;
   padding: 2rem 0;
-  margin-top: 4rem;
+  margin-top: 0;
 }
 
 /* ——————————————————————————
@@ -363,13 +363,13 @@ a { text-decoration: none; }
   display: block;
 }
 
-/* Responsive: stack dropdown on mobile */
+/* Responsive: stack dropdown on mobile
 @media (min-width: 769px) {
   .dropdown:hover .dropdown-menu,
   .dropdown:focus-within .dropdown-menu {
     display: block;
   }
-}
+} */
 
 /* --- HERO BAR --- */
 .hero-bar {
@@ -550,4 +550,83 @@ a { text-decoration: none; }
 }
 .team-bar .directory-bar-content h2 {
   margin-top: 0;
+}
+
+/* Only apply the circle style to .person-img in .people-list, not in team bars */
+.people-list .person-img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* For images in team bars, show as-is, no border-radius */
+.team-bar .directory-bar-illustration img {
+  max-width: 220px;
+  width: 100%;
+  border-radius: 0;
+  object-fit: contain;
+  height: auto;
+  box-shadow: none;
+}
+
+/* Project bars color scheme */
+.boba-bar {
+  background: #fbeaec; /* light pink */
+}
+.camp-bar {
+  background: #e0f2ef; /* light teal */
+}
+.antibullying-bar {
+  background: #fff7e0; /* light yellow */
+}
+.intl-bar {
+  background: #e4f7e0; /* light green */
+}
+.project-bar .directory-bar-content h2 {
+  margin-top: 0;
+}
+.project-date {
+  font-weight: 400;
+  font-size: 1rem;
+  color: #666;
+  margin-left: 0.5rem;
+}
+
+/* 6 shades of green for bars */
+.bar-green-1 { background: #e4f7e0; } /* lightest green */
+.bar-green-2 { background: #c8ecd0; }
+.bar-green-3 { background: #b6e2c6; }
+.bar-green-4 { background: #a3d9b4; }
+.bar-green-5 { background: #8fd1a3; }
+.bar-green-6 { background: #7cc992; } /* darkest green */
+
+.bar-beige { background: #f7f3ee}
+.bar-project-1 { background: #c8ecd0; }      /* light sage green */
+.bar-project-2  { background: #e4f7e0; }      /* medium dark sage green */
+
+.directory-bar-illustration img {
+  max-width: 100%;
+  max-height: 50;   /* scales with text size */
+  min-height: 20;    /* scales with text size */
+  height: auto;
+  width: auto;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+}
+
+
+/* all directory to beige */
+
+/* alternate between light sage green and medium dark sage green*/
+
+/* hide submenu by default */
+.site-nav .dropdown .dropdown-menu {
+  display: none !important;
+}
+/* only show when .show is present */
+.site-nav .dropdown .dropdown-menu.show {
+  display: block !important;
 }

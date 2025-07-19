@@ -19,41 +19,19 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.1 });
 reveals.forEach(el => observer.observe(el));
 
-// — open person modals (unchanged) —
-document.querySelectorAll('.person-card').forEach(card => {
-  card.addEventListener('click', () => {
-    const id = 'modal-' + card.dataset.person;
-    const modal = document.getElementById(id);
-    if (modal) modal.style.display = 'flex';
-  });
-});
-
-// — open About‐Us modal —
-const aboutBtn   = document.getElementById('open-about-modal');
-const aboutModal = document.getElementById('about-modal');
-if (aboutBtn && aboutModal) {
-  aboutBtn.addEventListener('click', () => {
-    aboutModal.style.display = 'flex';
-  });
-}
-
-// toggle dropdown on click (desktop only)
+// Toggle dropdown on click
 document.querySelectorAll('.dropdown > a').forEach(link => {
   link.addEventListener('click', e => {
-    if (window.innerWidth > 768) {
-      e.preventDefault();
-      link.nextElementSibling.classList.toggle('show');
-    }
+    e.preventDefault();
+    e.stopPropagation();
+    link.nextElementSibling.classList.toggle('show');
   });
 });
 
-// close if you click outside
-document.addEventListener('click', e => {
-  document.querySelectorAll('.dropdown-menu.show').forEach(menu => {
-    if (!menu.parentElement.contains(e.target)) {
-      menu.classList.remove('show');
-    }
-  });
+// Close dropdown when clicking outside
+document.addEventListener('click', () => {
+  document.querySelectorAll('.dropdown-menu.show')
+    .forEach(menu => menu.classList.remove('show'));
 });
 
 document.querySelectorAll('.close').forEach(btn => {
@@ -69,7 +47,6 @@ document.querySelectorAll('.close').forEach(btn => {
   });
 });
 
-// Optional: close modal when clicking outside modal-content
 document.querySelectorAll('.modal').forEach(modal => {
   modal.addEventListener('click', function(e) {
     if (e.target === modal) {
@@ -77,8 +54,3 @@ document.querySelectorAll('.modal').forEach(modal => {
     }
   });
 });
-
-
-// make home up and down not side to side add photos
-// light green for directory section
-// 
