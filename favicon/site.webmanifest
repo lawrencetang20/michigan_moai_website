@@ -1,5 +1,8 @@
 {
   "name": "MyWebSite",
+  "id": "/",
+  "start_url": "/",
+  "scope": "/",
   "short_name": "MySite",
   "icons": [
     {
