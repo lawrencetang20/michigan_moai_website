@@ -7,7 +7,6 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
     gtag('config', 'G-HEDYX29RSE');
   </script>
   <script>
@@ -23,75 +22,217 @@
     }
   })();
   </script>
+
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Legal Services Directory — Michigan Moai</title>
+  <meta name="description" content="A directory of culturally informed legal service providers in Michigan supporting AANHPI individuals with immigration, civil rights, hate crime, and discrimination cases. Free to download." />
+  <meta name="theme-color" content="#3F8230" />
+
   <link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" />
   <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
   <link rel="shortcut icon" href="/favicon/favicon.ico" />
   <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
-  <meta name="apple-mobile-web-app-title" content="MyWebSite" />
   <link rel="manifest" href="/favicon/site.webmanifest" />
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Legal Directory — Michigan Moai</title>
-  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;600;700&display=swap" rel="stylesheet"/>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="/style.css"/>
 </head>
 <body>
-  <!-- HEADER -->
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
   <header class="site-header">
     <div class="container header-inner">
-
-      <!-- Brand / Logo -->
-      <a href="/" class="brand">
-        <img src="/pngs/logo.png" alt="Michigan Moai Logo" />
+      <a href="/" class="brand" aria-label="Michigan Moai — home">
+        <img src="/pngs/logo.png" alt="" width="40" height="40" />
         <span class="brand-text">Michigan Moai</span>
       </a>
 
-      <!-- Mobile menu toggle -->
-      <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
+      <button class="menu-toggle" aria-label="Menu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+          <path d="M3 6h18M3 12h18M3 18h18"/>
+        </svg>
+      </button>
 
-      <!-- Site navigation -->
-      <nav class="site-nav">
+      <nav class="site-nav" aria-label="Primary">
         <ul>
-          <li><a href="/"            class="nav-link home">Home</a></li>
-
+          <li><a href="/" class="nav-link">Home</a></li>
           <li class="dropdown">
-            <a href="/therapist/"    class="nav-link directory">Directory</a>
-            <ul class="dropdown-menu">
-              <li><a href="/therapist/">Therapist</a></li>
-              <li><a href="/legal/">     Legal</a></li>
+            <a href="/therapist/" class="nav-link" aria-haspopup="true">Directories</a>
+            <ul class="dropdown-menu" role="menu">
+              <li role="none"><a role="menuitem" href="/therapist/">Therapists</a></li>
+              <li role="none"><a role="menuitem" href="/legal/">Legal services</a></li>
             </ul>
           </li>
-
-          <li><a href="/projects/"   class="nav-link projects">Projects</a></li>
-          <li><a href="/about/"      class="nav-link about">About Us</a></li>
+          <li><a href="/projects/" class="nav-link">Projects</a></li>
+          <li><a href="/about/" class="nav-link">About</a></li>
+          <li><a href="/therapist/" class="nav-link nav-cta">Find a therapist</a></li>
         </ul>
       </nav>
-
     </div>
   </header>
-  <!-- /HEADER -->
 
-  <main>
-    <section class="directory-bar bar-beige">
-      <div class="directory-bar-inner">
-        <div class="directory-bar-illustration">
-          <img src="/pngs/legal.png" alt="Legal illustration" />
-        </div>
-        <div class="directory-bar-content">
-          <h1>Michigan Legal Services Directory</h1>
-          <p>
-            This directory is a compiled document listing legal service providers across Michigan who offer culturally competent and, when available, bilingual support for Asian American, Native Hawaiian, and Pacific Islander (AANHPI) individuals. It includes organizations and attorneys experienced in assisting victims of hate crimes, discrimination, and racial bias, as well as those navigating immigration, civil rights, and other legal challenges. The directory is intended as a referral tool for advocates and community members seeking accessible, culturally informed legal assistance within Michigan.
-          </p>
-          <a href="/pdfs/legal.pdf" class="btn" target="_blank" rel="noopener">Download Legal Directory (PDF)</a>
+  <main id="main">
+
+    <section class="page-header">
+      <div class="container">
+        <span class="eyebrow">Legal Services Directory</span>
+        <h1>Legal help that understands the community.</h1>
+        <p class="lede">
+          A free directory of attorneys and advocacy organizations across Michigan offering culturally informed legal support for Asian American, Native Hawaiian, and Pacific Islander individuals — including bilingual services where available.
+        </p>
+      </div>
+    </section>
+
+    <section class="section section--tight">
+      <div class="container">
+        <div class="split">
+          <div class="split-content reveal">
+            <span class="eyebrow">How it works</span>
+            <h2 style="margin-top: var(--space-3); margin-bottom: var(--space-4);">Download the directory. Find the right advocate.</h2>
+            <p class="lede">
+              The directory is a single PDF — easy to read offline, share, or bring to an intake call. Every organization and attorney listed has experience working with AANHPI clients on hate crimes, discrimination, immigration, and civil rights cases.
+            </p>
+
+            <div style="display: flex; gap: var(--space-3); flex-wrap: wrap; margin-top: var(--space-6);">
+              <a href="/pdfs/legal.pdf" class="btn btn-lg btn-amber btn-arrow" target="_blank" rel="noopener">
+                Download legal directory (PDF)
+              </a>
+              <a href="mailto:support@michiganmoai.org?subject=Legal%20directory%20help" class="btn btn-secondary btn-lg">
+                Email us for help
+              </a>
+            </div>
+
+            <p style="margin-top: var(--space-4); font-size: var(--fs-14); color: var(--text-dim);">
+              No sign-up. The download opens in a new tab.
+            </p>
+          </div>
+
+          <div class="split-illustration reveal">
+            <img src="/pngs/legal.png" alt="" />
+          </div>
         </div>
       </div>
     </section>
+
+    <section class="section--tight" style="padding: var(--space-6) 0;">
+      <div class="container container-narrow">
+        <div class="callout reveal">
+          <div class="callout-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/>
+              <line x1="12" y1="8" x2="12" y2="12"/>
+              <line x1="12" y1="16" x2="12.01" y2="16"/>
+            </svg>
+          </div>
+          <div class="callout-content">
+            <p><strong>This directory is not legal advice.</strong> It's a referral list. For advice specific to your situation, contact an attorney listed in the directory directly — most offer free initial consultations.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--mint" aria-labelledby="areas-heading">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="eyebrow">Areas of support</span>
+          <h2 id="areas-heading">What the directory covers.</h2>
+          <p>Providers in the directory specialize in one or more of the following areas — many work across several.</p>
+        </div>
+
+        <div class="value-grid">
+          <div class="value-card reveal">
+            <div class="value-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-12V5l-8-3-8 3v5c0 8 8 12 8 12z"/>
+              </svg>
+            </div>
+            <h3>Hate crime &amp; bias incidents</h3>
+            <p>Advocacy and representation for survivors of hate crimes, verbal harassment, vandalism, and workplace discrimination motivated by race, ethnicity, or national origin.</p>
+          </div>
+
+          <div class="value-card reveal">
+            <div class="value-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="4" width="18" height="16" rx="2"/>
+                <path d="M3 10h18M8 4v4M16 4v4"/>
+              </svg>
+            </div>
+            <h3>Immigration &amp; status</h3>
+            <p>Visas, asylum, family reunification, DACA, naturalization, and removal defense — many providers have bilingual staff.</p>
+          </div>
+
+          <div class="value-card reveal">
+            <div class="value-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 21V7l5-4 5 4v14M5 21h14M9 9h2v4H9zM13 9h2v4h-2z"/>
+              </svg>
+            </div>
+            <h3>Civil rights &amp; advocacy</h3>
+            <p>Voting rights, housing discrimination, employment cases, school-based discrimination, and policy advocacy at the state level.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--tight">
+      <div class="container container-narrow">
+        <div class="section-header reveal">
+          <span class="eyebrow">Not sure where to start?</span>
+          <h2 style="margin-top: var(--space-3);">We can help you narrow down.</h2>
+          <p>
+            If you'd rather not page through the full directory, send us a short note describing your situation (no personal details required) and we'll point you to a few providers who fit.
+          </p>
+        </div>
+        <div style="display: flex; gap: var(--space-3); justify-content: center; flex-wrap: wrap;">
+          <a href="mailto:support@michiganmoai.org?subject=Legal%20help%20request" class="btn btn-lg btn-arrow">Email the team</a>
+          <a href="/therapist/" class="btn btn-secondary btn-lg">Looking for a therapist?</a>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <footer class="site-footer">
     <div class="container">
-      <p>&copy; 2025 Michigan Moai</p>
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="/pngs/logo.png" alt="Michigan Moai" />
+          <p>A nonprofit connecting AANHPI communities in Michigan to culturally fluent mental health and legal care.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Directories</h4>
+          <ul>
+            <li><a href="/therapist/">Therapists</a></li>
+            <li><a href="/legal/">Legal services</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Organization</h4>
+          <ul>
+            <li><a href="/about/">About us</a></li>
+            <li><a href="/projects/">Projects</a></li>
+            <li><a href="mailto:support@michiganmoai.org">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="https://www.linkedin.com/company/michigan-moai/" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><a href="mailto:support@michiganmoai.org">support@michiganmoai.org</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Michigan Moai &middot; A nonprofit organization</p>
+        <p>In crisis? Call or text <a href="tel:988">988</a></p>
+      </div>
     </div>
   </footer>
 
   <script src="/main.js" defer></script>
+</body>
+</html>

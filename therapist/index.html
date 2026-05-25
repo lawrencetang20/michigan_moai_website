@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google tag (gtag.js) -->
+  <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-HEDYX29RSE"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
     gtag('config', 'G-HEDYX29RSE');
   </script>
   <script>
@@ -23,75 +22,239 @@
     }
   })();
   </script>
+
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Therapist Directory — Michigan Moai</title>
+  <meta name="description" content="A directory of bilingual, culturally fluent therapists in Michigan and PSYPACT states who support AANHPI communities. Free to download as a PDF — no sign-up required." />
+  <meta name="theme-color" content="#3F8230" />
+
   <link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" />
   <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
   <link rel="shortcut icon" href="/favicon/favicon.ico" />
   <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
-  <meta name="apple-mobile-web-app-title" content="MyWebSite" />
   <link rel="manifest" href="/favicon/site.webmanifest" />
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Therapist Directory — Michigan Moai</title>
-  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;600;700&display=swap" rel="stylesheet"/>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="/style.css"/>
 </head>
 <body>
-  <!-- HEADER -->
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
   <header class="site-header">
     <div class="container header-inner">
-
-      <!-- Brand / Logo -->
-      <a href="/" class="brand">
-        <img src="/pngs/logo.png" alt="Michigan Moai Logo" />
+      <a href="/" class="brand" aria-label="Michigan Moai — home">
+        <img src="/pngs/logo.png" alt="" width="40" height="40" />
         <span class="brand-text">Michigan Moai</span>
       </a>
 
-      <!-- Mobile menu toggle -->
-      <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
+      <button class="menu-toggle" aria-label="Menu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+          <path d="M3 6h18M3 12h18M3 18h18"/>
+        </svg>
+      </button>
 
-      <!-- Site navigation -->
-      <nav class="site-nav">
+      <nav class="site-nav" aria-label="Primary">
         <ul>
-          <li><a href="/"            class="nav-link home">Home</a></li>
-
+          <li><a href="/" class="nav-link">Home</a></li>
           <li class="dropdown">
-            <a href="/therapist/"    class="nav-link directory">Directory</a>
-            <ul class="dropdown-menu">
-              <li><a href="/therapist/">Therapist</a></li>
-              <li><a href="/legal/">     Legal</a></li>
+            <a href="/therapist/" class="nav-link" aria-haspopup="true">Directories</a>
+            <ul class="dropdown-menu" role="menu">
+              <li role="none"><a role="menuitem" href="/therapist/">Therapists</a></li>
+              <li role="none"><a role="menuitem" href="/legal/">Legal services</a></li>
             </ul>
           </li>
-
-          <li><a href="/projects/"   class="nav-link projects">Projects</a></li>
-          <li><a href="/about/"      class="nav-link about">About Us</a></li>
+          <li><a href="/projects/" class="nav-link">Projects</a></li>
+          <li><a href="/about/" class="nav-link">About</a></li>
+          <li><a href="/therapist/" class="nav-link nav-cta">Find a therapist</a></li>
         </ul>
       </nav>
-
     </div>
   </header>
 
-  <!-- /HEADER -->
+  <main id="main">
 
-  <main>
-  <section class="directory-bar bar-beige">
-      <div class="directory-bar-inner">
-      <div class="directory-bar-illustration">
-          <img src="/pngs/directory.png" alt="Therapist illustration" />
+    <section class="page-header">
+      <div class="container">
+        <span class="eyebrow">Therapist Directory</span>
+        <h1>Find a culturally fluent therapist in Michigan.</h1>
+        <p class="lede">
+          A free, curated directory of bilingual licensed therapists across Michigan and PSYPACT-participating states — vetted for cultural competency and experience supporting AANHPI individuals through trauma, racism, and intergenerational stress.
+        </p>
       </div>
-      <div class="directory-bar-content">
-          <h1>Michigan Therapist Directory</h1>
+    </section>
+
+    <!-- DOWNLOAD CTA -->
+    <section class="section section--tight">
+      <div class="container">
+        <div class="split">
+          <div class="split-content reveal">
+            <span class="eyebrow">How it works</span>
+            <h2 style="margin-top: var(--space-3); margin-bottom: var(--space-4);">Download the directory. Reach out at your own pace.</h2>
+            <p class="lede">
+              The directory is a single PDF — easy to read offline, share with family, or print. Every therapist listed has demonstrated cultural competency and experience supporting individuals affected by hate crimes, racial bias, bullying, and related trauma.
+            </p>
+
+            <div style="display: flex; gap: var(--space-3); flex-wrap: wrap; margin-top: var(--space-6);">
+              <a href="/pdfs/directory.pdf" class="btn btn-lg btn-arrow" target="_blank" rel="noopener">
+                Download therapist directory (PDF)
+              </a>
+              <a href="mailto:support@michiganmoai.org?subject=Therapist%20directory%20help" class="btn btn-secondary btn-lg">
+                Email us for help
+              </a>
+            </div>
+
+            <p style="margin-top: var(--space-4); font-size: var(--fs-14); color: var(--text-dim);">
+              No sign-up. No tracking inside the PDF. The download opens in a new tab.
+            </p>
+          </div>
+
+          <div class="split-illustration reveal">
+            <img src="/pngs/directory.png" alt="" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FRICTION ACKNOWLEDGMENT -->
+    <section class="section--tight" style="padding: var(--space-6) 0;">
+      <div class="container container-narrow">
+        <div class="callout callout-mint reveal">
+          <div class="callout-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+            </svg>
+          </div>
+          <div class="callout-content">
+            <p><strong>Reaching out for the first time is the hardest step.</strong> If you're stuck, you don't have to choose alone — email <a href="mailto:support@michiganmoai.org">support@michiganmoai.org</a> and we'll help you narrow the list to a few therapists who might fit.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHAT TO EXPECT -->
+    <section class="section section--mint" aria-labelledby="what-to-expect-heading">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="eyebrow">What's in the directory</span>
+          <h2 id="what-to-expect-heading">Therapists chosen for you, not just for SEO.</h2>
+          <p>Each entry is vetted on three dimensions before we list them.</p>
+        </div>
+
+        <div class="value-grid">
+          <div class="value-card reveal">
+            <div class="value-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                <path d="m9 11 3 3L22 4"/>
+                <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+              </svg>
+            </div>
+            <h3>Licensed in Michigan or PSYPACT</h3>
+            <p>Every therapist holds an active Michigan license or can practice here through the PSYPACT compact — telehealth across state lines is fully covered.</p>
+          </div>
+
+          <div class="value-card reveal">
+            <div class="value-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+              </svg>
+            </div>
+            <h3>Speaks an AANHPI language</h3>
+            <p>Mandarin, Cantonese, Vietnamese, Korean, Tagalog, Hindi, Urdu, Japanese, Tamil, and more — therapy works better in your first language.</p>
+          </div>
+
+          <div class="value-card reveal">
+            <div class="value-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/>
+                <path d="M12 6v6l4 2"/>
+              </svg>
+            </div>
+            <h3>Trauma- &amp; culture-informed</h3>
+            <p>Demonstrated experience with intergenerational trauma, immigration stress, racial bias, hate-crime survivors, and bicultural identity.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LANGUAGES SUPPORTED -->
+    <section class="section section--tight" aria-labelledby="languages-heading">
+      <div class="container container-narrow">
+        <div class="section-header reveal">
+          <span class="eyebrow">Languages represented</span>
+          <h2 id="languages-heading">Care in your first language.</h2>
+          <p>The directory includes providers who offer sessions in the following AANHPI languages, in addition to English.</p>
+        </div>
+        <div class="tag-row reveal" style="justify-content: center;">
+          <span class="tag">Mandarin · 普通话</span>
+          <span class="tag">Cantonese · 廣東話</span>
+          <span class="tag">Vietnamese · Tiếng Việt</span>
+          <span class="tag">Korean · 한국어</span>
+          <span class="tag">Tagalog</span>
+          <span class="tag">Hindi · हिन्दी</span>
+          <span class="tag">Urdu · اُردُو</span>
+          <span class="tag">Japanese · 日本語</span>
+          <span class="tag">Tamil · தமிழ்</span>
+          <span class="tag">Bengali · বাংলা</span>
+          <span class="tag">Gujarati · ગુજરાતી</span>
+          <span class="tag">Punjabi · ਪੰਜਾਬੀ</span>
+        </div>
+        <p style="text-align: center; margin-top: var(--space-5); color: var(--text-dim); font-size: var(--fs-14);">
+          Don't see your language? <a href="mailto:support@michiganmoai.org?subject=Language%20request">Tell us</a> — we'll search for a provider and update the directory.
+        </p>
+      </div>
+    </section>
+
+    <!-- CRISIS NOTE -->
+    <section class="section section--tight" style="padding-top: var(--space-5);">
+      <div class="container container-narrow">
+        <div class="crisis-note reveal" role="note">
           <p>
-          This directory is a compiled document listing licensed therapists in Michigan and other PSYPACT-participating states who offer bilingual mental health services in AANHPI (Asian American, Native Hawaiian, and Pacific Islander) languages. Each therapist included has demonstrated cultural competency and experience supporting individuals affected by hate crimes, racial bias, bullying, and related trauma. The purpose of this directory is to serve as a referral resource for organizations, advocates, and individuals seeking culturally responsive and language-accessible mental health care for AANHPI community members.
+            <strong>In crisis right now?</strong> Call or text <strong>988</strong> to reach the 988 Suicide &amp; Crisis Lifeline — free, confidential, 24/7. The line offers <a href="https://988lifeline.org/help-yourself/asian-american-pacific-islander/" target="_blank" rel="noopener">AANHPI-specific support</a> and interpreters in 240+ languages.
           </p>
-          <a href="/pdfs/directory.pdf" class="btn" target="_blank" rel="noopener">Download Therapist Directory (PDF)</a>
+        </div>
       </div>
-      </div>
-  </section>
+    </section>
+
   </main>
 
   <footer class="site-footer">
     <div class="container">
-      <p>&copy; 2025 Michigan Moai</p>
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="/pngs/logo.png" alt="Michigan Moai" />
+          <p>A nonprofit connecting AANHPI communities in Michigan to culturally fluent mental health and legal care.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Directories</h4>
+          <ul>
+            <li><a href="/therapist/">Therapists</a></li>
+            <li><a href="/legal/">Legal services</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Organization</h4>
+          <ul>
+            <li><a href="/about/">About us</a></li>
+            <li><a href="/projects/">Projects</a></li>
+            <li><a href="mailto:support@michiganmoai.org">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="https://www.linkedin.com/company/michigan-moai/" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><a href="mailto:support@michiganmoai.org">support@michiganmoai.org</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Michigan Moai &middot; A nonprofit organization</p>
+        <p>In crisis? Call or text <a href="tel:988">988</a></p>
+      </div>
     </div>
   </footer>
 
