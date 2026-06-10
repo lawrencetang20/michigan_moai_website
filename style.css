@@ -985,11 +985,11 @@ p + p { margin-top: var(--space-3); }
 .moai-explainer.active .moai-member,
 .moai-explainer.active .moai-heart { opacity: 1; }
 .moai-explainer.active .moai-member { transform: none; }
-.moai-explainer.active .moai-member:nth-child(1) { transition-delay: 120ms; }
-.moai-explainer.active .moai-member:nth-child(2) { transition-delay: 190ms; }
-.moai-explainer.active .moai-member:nth-child(3) { transition-delay: 260ms; }
-.moai-explainer.active .moai-member:nth-child(4) { transition-delay: 330ms; }
-.moai-explainer.active .moai-member:nth-child(5) { transition-delay: 400ms; }
+.moai-explainer.active .moai-orbit > g:nth-child(1) .moai-member { transition-delay: 120ms; }
+.moai-explainer.active .moai-orbit > g:nth-child(2) .moai-member { transition-delay: 190ms; }
+.moai-explainer.active .moai-orbit > g:nth-child(3) .moai-member { transition-delay: 260ms; }
+.moai-explainer.active .moai-orbit > g:nth-child(4) .moai-member { transition-delay: 330ms; }
+.moai-explainer.active .moai-orbit > g:nth-child(5) .moai-member { transition-delay: 400ms; }
 .moai-explainer.active .moai-heart { transition-delay: 520ms; }
 
 .moai-ring { animation: spin-slow 80s linear infinite; }
@@ -1001,6 +1001,21 @@ p + p { margin-top: var(--space-3); }
   transform-box: view-box;
   transform-origin: 180px 160px;
   animation: spin-slow 140s linear infinite;
+}
+
+/* A ripple of care radiates from the heart out to the circle of members —
+   34 × 3.24 ≈ 110, so it lands exactly on the dashed ring before fading */
+.moai-ripple {
+  transform-box: view-box;
+  transform-origin: 180px 160px;
+  opacity: 0;
+  animation: ripple 7s var(--ease-out) 2.4s infinite;
+}
+@keyframes ripple {
+  0%   { transform: scale(1); opacity: 0; }
+  6%   { opacity: 0.6; }
+  42%  { transform: scale(3.24); opacity: 0; }
+  100% { transform: scale(3.24); opacity: 0; }
 }
 
 /* The heart breathes — slow, steady, calming */
@@ -1192,9 +1207,13 @@ p + p { margin-top: var(--space-3); }
   font-size: var(--fs-14);
   font-weight: 500;
   letter-spacing: -0.005em;
+  transition: transform var(--dur-1) var(--ease-out), box-shadow var(--dur-1) var(--ease-out);
 }
 .tag-sand { background: var(--sand-100); color: var(--text); }
 .tag-amber { background: var(--amber-100); color: var(--amber-700); }
+@media (hover: hover) and (pointer: fine) {
+  .tag:hover { transform: translateY(-2px); box-shadow: var(--shadow-1); }
+}
 
 /* -------------------------------------------------------------------------
    People (team cards on About)
@@ -1431,12 +1450,16 @@ p + p { margin-top: var(--space-3); }
 }
 .footer-col ul { display: flex; flex-direction: column; gap: var(--space-2); }
 .footer-col a {
+  display: inline-block;
   color: rgba(255, 255, 255, 0.78);
   font-size: var(--fs-15);
   text-decoration: none;
-  transition: color var(--dur-1) var(--ease-out);
+  transition: color var(--dur-1) var(--ease-out), transform var(--dur-1) var(--ease-out);
 }
 .footer-col a:hover { color: white; }
+@media (hover: hover) and (pointer: fine) {
+  .footer-col a:hover { transform: translateX(3px); }
+}
 .footer-bottom {
   display: flex;
   justify-content: space-between;
@@ -1706,15 +1729,17 @@ html.has-loader .page-loader {
   .reveal,
   .stat-strip .stat,
   .tag-row.reveal .tag,
-  .moai-ring, .moai-member, .moai-heart {
+  .moai-ring, .moai-member {
     opacity: 1 !important;
     transform: none !important;
     transition: none !important;
   }
+  /* transform: none would wipe the heart's SVG translate attribute */
+  .moai-heart { opacity: 1 !important; transition: none !important; }
   .hero-eyebrow, .hero h1, .hero .lede, .hero-cta, .hero-meta,
   .hero-illustration, .hero-illustration img, .hero-ring, .hero-ring .ring-spin,
   .illo-ring .ring-spin, .sway,
-  .moai-ring, .moai-orbit, .moai-heart-path, .motif-leaf,
+  .moai-ring, .moai-orbit, .moai-ripple, .moai-heart-path, .motif-leaf,
   .blob, .motif-ring, .section--mint::after,
   .page-header .eyebrow, .page-header h1, .page-header .lede {
     animation: none !important;
@@ -1738,6 +1763,7 @@ html.has-loader .page-loader {
   .directory-card:hover .directory-card-icon,
   .value-card:hover .value-icon,
   .team-card:hover .team-photo-wrap img,
+  .tag:hover, .footer-col a:hover,
   .btn-arrow:hover::after { transform: none !important; }
 
   .site-nav { transition: none; }

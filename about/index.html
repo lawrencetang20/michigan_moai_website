@@ -160,13 +160,44 @@
                 </radialGradient>
               </defs>
               <circle cx="180" cy="160" r="150" fill="url(#moaiBgAbout)"/>
-              <circle class="moai-ring" cx="180" cy="160" r="110" fill="none" stroke="#A9D193" stroke-width="1.5" stroke-dasharray="3 5"/>
+              <circle class="moai-ring" cx="180" cy="160" r="110" fill="none" stroke="#A9D193" stroke-width="2" stroke-dasharray="3 5"/>
+              <circle class="moai-ripple" cx="180" cy="160" r="34" fill="none" stroke="#A9D193" stroke-width="1.5"/>
               <g class="moai-orbit">
-                <circle class="moai-member" cx="180"   cy="50"  r="22" fill="#58A03E"/>
-                <circle class="moai-member" cx="284.6" cy="126" r="22" fill="#C77A3B"/>
-                <circle class="moai-member" cx="244.7" cy="249" r="22" fill="#3F8230"/>
-                <circle class="moai-member" cx="115.3" cy="249" r="22" fill="#E8B775"/>
-                <circle class="moai-member" cx="75.4"  cy="126" r="22" fill="#7FBA67"/>
+                <g transform="translate(180 50)">
+                  <g class="moai-member">
+                    <circle r="22" fill="#58A03E"/>
+                    <circle cy="-6" r="5.5" fill="#FFFFFF" opacity="0.95"/>
+                    <path d="M -11 14 A 11 9 0 0 1 11 14 Z" fill="#FFFFFF" opacity="0.95"/>
+                  </g>
+                </g>
+                <g transform="translate(284.6 126)">
+                  <g class="moai-member">
+                    <circle r="22" fill="#C77A3B"/>
+                    <circle cy="-6" r="5.5" fill="#FFFFFF" opacity="0.95"/>
+                    <path d="M -11 14 A 11 9 0 0 1 11 14 Z" fill="#FFFFFF" opacity="0.95"/>
+                  </g>
+                </g>
+                <g transform="translate(244.7 249)">
+                  <g class="moai-member">
+                    <circle r="22" fill="#3F8230"/>
+                    <circle cy="-6" r="5.5" fill="#FFFFFF" opacity="0.95"/>
+                    <path d="M -11 14 A 11 9 0 0 1 11 14 Z" fill="#FFFFFF" opacity="0.95"/>
+                  </g>
+                </g>
+                <g transform="translate(115.3 249)">
+                  <g class="moai-member">
+                    <circle r="22" fill="#E8B775"/>
+                    <circle cy="-6" r="5.5" fill="#FFFFFF" opacity="0.95"/>
+                    <path d="M -11 14 A 11 9 0 0 1 11 14 Z" fill="#FFFFFF" opacity="0.95"/>
+                  </g>
+                </g>
+                <g transform="translate(75.4 126)">
+                  <g class="moai-member">
+                    <circle r="22" fill="#7FBA67"/>
+                    <circle cy="-6" r="5.5" fill="#FFFFFF" opacity="0.95"/>
+                    <path d="M -11 14 A 11 9 0 0 1 11 14 Z" fill="#FFFFFF" opacity="0.95"/>
+                  </g>
+                </g>
               </g>
               <g class="moai-heart" transform="translate(180 160)">
                 <circle r="34" fill="white" stroke="#A9D193" stroke-width="1.5"/>
