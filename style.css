@@ -713,41 +713,18 @@ p + p { margin-top: var(--space-3); }
   transform: translate(-50%, -50%);
   will-change: transform;
 }
+/* Rotation origin is pinned to the circle center in view-box units —
+   fill-box would use the group bbox center, which the protruding dots skew,
+   making the ring wobble off its dashed line as it spins */
 .hero-ring .ring-spin {
-  transform-box: fill-box;
-  transform-origin: center;
+  transform-box: view-box;
+  transform-origin: 260px 260px;
   animation: spin-slow 90s linear infinite;
 }
 .ring-dot { fill: var(--green-400); }
 .ring-dot--amber { fill: var(--amber-300); }
 @keyframes spin-slow {
   to { transform: rotate(360deg); }
-}
-
-/* Floating accent shapes around the hero picture — same gentle-float as the
-   illustration, offset so the cluster never moves in lockstep */
-.hero-spark {
-  position: absolute;
-  border-radius: 50%;
-  pointer-events: none;
-}
-.spark-1 {
-  width: 12px; height: 12px;
-  top: 12%; left: 4%;
-  background: var(--green-400);
-  animation: gentle-float 7s var(--ease-in-out) 0.4s infinite alternate;
-}
-.spark-2 {
-  width: 20px; height: 20px;
-  bottom: 8%; right: 2%;
-  border: 3px solid var(--amber-300);
-  animation: gentle-float 9s var(--ease-in-out) 1.8s infinite alternate-reverse;
-}
-.spark-3 {
-  width: 14px; height: 14px;
-  top: 6%; right: 10%;
-  border: 3px solid var(--green-300);
-  animation: gentle-float 8s var(--ease-in-out) 1s infinite alternate;
 }
 
 @media (max-width: 900px) {
@@ -1171,26 +1148,9 @@ p + p { margin-top: var(--space-3); }
 }
 .illo-ring--amber { color: color-mix(in srgb, var(--amber-300) 55%, var(--amber-100)); }
 .illo-ring .ring-spin {
-  transform-box: fill-box;
-  transform-origin: center;
+  transform-box: view-box;
+  transform-origin: 210px 210px;
   animation: spin-slow 80s linear infinite;
-}
-.illo-spark {
-  position: absolute;
-  border-radius: 50%;
-  pointer-events: none;
-}
-.illo-spark-a {
-  width: 10px; height: 10px;
-  top: 10%; left: 8%;
-  background: var(--green-300);
-  animation: gentle-float 7s var(--ease-in-out) 0.6s infinite alternate;
-}
-.illo-spark-b {
-  width: 16px; height: 16px;
-  bottom: 10%; right: 6%;
-  border: 3px solid var(--amber-300);
-  animation: gentle-float 9s var(--ease-in-out) 1.4s infinite alternate-reverse;
 }
 
 /* Centered community illustration (projects page) — scroll drift comes from
@@ -1753,7 +1713,7 @@ html.has-loader .page-loader {
   }
   .hero-eyebrow, .hero h1, .hero .lede, .hero-cta, .hero-meta,
   .hero-illustration, .hero-illustration img, .hero-ring, .hero-ring .ring-spin,
-  .hero-spark, .illo-ring .ring-spin, .illo-spark, .sway,
+  .illo-ring .ring-spin, .sway,
   .moai-ring, .moai-orbit, .moai-heart-path, .motif-leaf,
   .blob, .motif-ring, .section--mint::after,
   .page-header .eyebrow, .page-header h1, .page-header .lede {
