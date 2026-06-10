@@ -110,6 +110,7 @@
   --dur-2: 180ms;
   --dur-3: 240ms;
   --dur-4: 360ms;
+  --dur-5: 560ms; /* marketing-level entrances only, never repeated UI */
 
   /* Layout */
   --container: 1180px;
@@ -280,6 +281,10 @@ p + p { margin-top: var(--space-3); }
   backdrop-filter: saturate(140%) blur(10px);
   -webkit-backdrop-filter: saturate(140%) blur(10px);
   border-bottom: 1px solid var(--border);
+  transition: box-shadow var(--dur-2) var(--ease-out);
+}
+.site-header.is-scrolled {
+  box-shadow: var(--shadow-2);
 }
 .header-inner {
   display: flex;
@@ -296,6 +301,8 @@ p + p { margin-top: var(--space-3); }
   gap: var(--space-3);
   text-decoration: none;
   color: var(--text-strong);
+  -webkit-user-select: none;
+  user-select: none;
 }
 .brand img { height: 40px; width: auto; }
 .brand-text {
@@ -336,6 +343,8 @@ p + p { margin-top: var(--space-3); }
   font-weight: 500;
   text-decoration: none;
   transition: background var(--dur-1) var(--ease-out), color var(--dur-1) var(--ease-out);
+  -webkit-user-select: none;
+  user-select: none;
 }
 @media (hover: hover) and (pointer: fine) {
   .site-nav a.nav-link:hover { background: var(--green-50); color: var(--green-700); }
@@ -430,7 +439,11 @@ p + p { margin-top: var(--space-3); }
   user-select: none;
 }
 .btn:hover { background: var(--green-700); color: white; box-shadow: var(--shadow-2); }
-.btn:active { transform: scale(0.98); }
+.btn:active { transform: scale(0.97); }
+@media (hover: hover) and (pointer: fine) {
+  .btn:hover { transform: translateY(-1px); }
+  .btn:active { transform: translateY(0) scale(0.97); }
+}
 
 .btn-lg {
   padding: 18px 28px;
@@ -473,7 +486,9 @@ p + p { margin-top: var(--space-3); }
   font-weight: 500;
   transition: transform var(--dur-2) var(--ease-out);
 }
-.btn-arrow:hover::after { transform: translateX(3px); }
+@media (hover: hover) and (pointer: fine) {
+  .btn-arrow:hover::after { transform: translateX(3px); }
+}
 
 /* -------------------------------------------------------------------------
    Section primitives
@@ -541,7 +556,35 @@ p + p { margin-top: var(--space-3); }
   color: var(--green-700);
   position: relative;
   white-space: nowrap;
+  /* highlighter sweep, draws in once after the headline settles */
+  background-image: linear-gradient(
+    color-mix(in srgb, var(--green-300) 45%, transparent),
+    color-mix(in srgb, var(--green-300) 45%, transparent)
+  );
+  background-repeat: no-repeat;
+  background-position: 0 90%;
+  background-size: 0% 0.26em;
+  animation: accent-sweep var(--dur-5) var(--ease-out) 680ms forwards;
 }
+@keyframes accent-sweep {
+  to { background-size: 100% 0.26em; }
+}
+
+/* One-time staggered entrance — rare/first-visit motion, never repeated UI */
+@keyframes rise-in {
+  from { opacity: 0; transform: translateY(16px) scale(0.99); }
+  to   { opacity: 1; transform: none; }
+}
+.hero-eyebrow,
+.hero h1,
+.hero .lede,
+.hero-cta,
+.hero-meta { animation: rise-in var(--dur-5) var(--ease-out) both; }
+.hero h1    { animation-delay: 70ms; }
+.hero .lede { animation-delay: 140ms; }
+.hero-cta   { animation-delay: 210ms; }
+.hero-meta  { animation-delay: 280ms; }
+.hero-illustration { animation: rise-in 640ms var(--ease-out) 140ms both; }
 .hero p.lede {
   margin-bottom: var(--space-6);
   color: var(--text-body);
@@ -576,10 +619,35 @@ p + p { margin-top: var(--space-3); }
   justify-content: center;
 }
 .hero-illustration img {
+  position: relative;
   width: 100%;
   max-width: 520px;
   height: auto;
   filter: drop-shadow(0 30px 40px rgba(17, 38, 11, 0.08));
+  animation: gentle-float 9s var(--ease-in-out) 1.2s infinite alternate;
+}
+@keyframes gentle-float {
+  from { transform: translateY(0); }
+  to   { transform: translateY(-8px); }
+}
+
+/* Decorative moai orbit behind the hero illustration — slow enough to feel still */
+.hero-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: min(108%, 560px);
+  aspect-ratio: 1;
+  height: auto;
+  color: var(--green-300);
+  opacity: 0.55;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  animation: hero-ring-spin 90s linear infinite;
+}
+@keyframes hero-ring-spin {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to   { transform: translate(-50%, -50%) rotate(360deg); }
 }
 
 @media (max-width: 900px) {
@@ -588,6 +656,7 @@ p + p { margin-top: var(--space-3); }
   .hero-content { max-width: 100%; }
   .hero-illustration { order: -1; }
   .hero-illustration img { max-width: 320px; }
+  .hero-ring { width: min(88%, 348px); }
 }
 
 /* -------------------------------------------------------------------------
@@ -606,6 +675,27 @@ p + p { margin-top: var(--space-3); }
 .stat {
   text-align: left;
 }
+.stat::before {
+  content: "";
+  display: block;
+  width: 28px;
+  height: 3px;
+  border-radius: var(--radius-full);
+  background: var(--green-300);
+  margin-bottom: var(--space-3);
+}
+
+/* Stats pop in one at a time once the strip enters the viewport */
+.stat-strip.reveal { transform: none; }
+.stat-strip .stat {
+  opacity: 0;
+  transform: translateY(10px) scale(0.98);
+  transition: opacity 420ms var(--ease-out), transform 420ms var(--ease-out);
+}
+.stat-strip .stat:nth-child(2) { transition-delay: 80ms; }
+.stat-strip .stat:nth-child(3) { transition-delay: 160ms; }
+.stat-strip.active .stat { opacity: 1; transform: none; }
+
 .stat-value {
   font-family: var(--font-display);
   font-size: clamp(1.75rem, 1.25rem + 1.5vw, 2.5rem);
@@ -676,10 +766,21 @@ p + p { margin-top: var(--space-3); }
   color: var(--green-700);
   margin-bottom: var(--space-5);
   position: relative;
+  transition: transform var(--dur-3) var(--ease-out),
+              background-color var(--dur-3) var(--ease-out);
 }
 .directory-card.amber .directory-card-icon {
   background: var(--amber-100);
   color: var(--amber-700);
+}
+@media (hover: hover) and (pointer: fine) {
+  .directory-card:hover .directory-card-icon {
+    transform: scale(1.06);
+    background: var(--green-200);
+  }
+  .directory-card.amber:hover .directory-card-icon {
+    background: color-mix(in srgb, var(--amber-300) 40%, var(--amber-100));
+  }
 }
 .directory-card-icon svg { width: 32px; height: 32px; }
 .directory-card h3 {
@@ -729,6 +830,14 @@ p + p { margin-top: var(--space-3); }
   justify-content: center;
   color: var(--green-700);
   margin-bottom: var(--space-4);
+  transition: transform var(--dur-2) var(--ease-out),
+              background-color var(--dur-2) var(--ease-out);
+}
+@media (hover: hover) and (pointer: fine) {
+  .value-card:hover .value-icon {
+    transform: scale(1.05);
+    background: var(--green-100);
+  }
 }
 .value-icon svg { width: 22px; height: 22px; }
 .value-card h3 {
@@ -780,6 +889,48 @@ p + p { margin-top: var(--space-3); }
   .moai-explainer { grid-template-columns: 1fr; padding: var(--space-6); }
 }
 
+/* The circle of support assembles when the explainer scrolls into view —
+   motion used structurally: it *demonstrates* what a moai is */
+.moai-ring,
+.moai-member,
+.moai-heart {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+.moai-ring,
+.moai-heart { opacity: 0; transition: opacity var(--dur-5) var(--ease-out); }
+.moai-member {
+  opacity: 0;
+  transform: scale(0.85);
+  transition: opacity 420ms var(--ease-out), transform 420ms var(--ease-out);
+}
+.moai-explainer.active .moai-ring,
+.moai-explainer.active .moai-member,
+.moai-explainer.active .moai-heart { opacity: 1; }
+.moai-explainer.active .moai-member { transform: none; }
+.moai-explainer.active .moai-member:nth-child(1) { transition-delay: 120ms; }
+.moai-explainer.active .moai-member:nth-child(2) { transition-delay: 190ms; }
+.moai-explainer.active .moai-member:nth-child(3) { transition-delay: 260ms; }
+.moai-explainer.active .moai-member:nth-child(4) { transition-delay: 330ms; }
+.moai-explainer.active .moai-member:nth-child(5) { transition-delay: 400ms; }
+.moai-explainer.active .moai-heart { transition-delay: 520ms; }
+
+.moai-ring { animation: moai-ring-spin 80s linear infinite; }
+@keyframes moai-ring-spin {
+  to { transform: rotate(360deg); }
+}
+
+/* The heart breathes — slow, steady, calming */
+.moai-heart-path {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: heart-breathe 4.5s var(--ease-in-out) infinite alternate;
+}
+@keyframes heart-breathe {
+  from { transform: scale(1); }
+  to   { transform: scale(1.07); }
+}
+
 /* -------------------------------------------------------------------------
    Callout (friction acknowledgment, gentle copy)
    ------------------------------------------------------------------------- */
@@ -827,6 +978,13 @@ p + p { margin-top: var(--space-3); }
   border-bottom: 1px solid var(--border);
 }
 .page-header .eyebrow { margin-bottom: var(--space-3); }
+
+/* Same one-time entrance as the hero, scaled down for interior pages */
+.page-header .eyebrow,
+.page-header h1,
+.page-header .lede { animation: rise-in 480ms var(--ease-out) both; }
+.page-header h1    { animation-delay: 60ms; }
+.page-header .lede { animation-delay: 120ms; }
 .page-header h1 {
   margin-bottom: var(--space-3);
   letter-spacing: -0.022em;
@@ -916,6 +1074,10 @@ p + p { margin-top: var(--space-3); }
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform var(--dur-4) var(--ease-out);
+}
+@media (hover: hover) and (pointer: fine) {
+  .team-card:hover .team-photo-wrap img { transform: scale(1.04); }
 }
 .team-body { padding: var(--space-5) var(--space-6) var(--space-6); }
 .team-role {
@@ -1114,14 +1276,46 @@ p + p { margin-top: var(--space-3); }
    ------------------------------------------------------------------------- */
 .reveal {
   opacity: 0;
-  transform: translateY(12px);
+  transform: translateY(14px) scale(0.985);
   transition: opacity 480ms var(--ease-out), transform 480ms var(--ease-out);
+  transition-delay: var(--reveal-delay, 0ms);
   will-change: opacity, transform;
 }
 .reveal.active {
   opacity: 1;
-  transform: translateY(0);
+  transform: none;
 }
+
+/* Stagger siblings that enter the viewport together (30–80ms apart) */
+.directory-grid > .reveal:nth-child(2),
+.team-grid      > .reveal:nth-child(2),
+.split          > .reveal:nth-child(2) { --reveal-delay: 90ms; }
+.value-grid     > .reveal:nth-child(2) { --reveal-delay: 80ms; }
+.value-grid     > .reveal:nth-child(3) { --reveal-delay: 160ms; }
+.project-list   > .reveal:nth-child(2) { --reveal-delay: 70ms; }
+.project-list   > .reveal:nth-child(3) { --reveal-delay: 140ms; }
+.project-list   > .reveal:nth-child(4) { --reveal-delay: 210ms; }
+
+/* Language pills cascade in, 30ms apart */
+.tag-row.reveal .tag {
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 360ms var(--ease-out), transform 360ms var(--ease-out);
+  transition-delay: calc(var(--tag-i, 0) * 30ms);
+}
+.tag-row.reveal.active .tag { opacity: 1; transform: none; }
+.tag-row.reveal .tag:nth-child(1)  { --tag-i: 0; }
+.tag-row.reveal .tag:nth-child(2)  { --tag-i: 1; }
+.tag-row.reveal .tag:nth-child(3)  { --tag-i: 2; }
+.tag-row.reveal .tag:nth-child(4)  { --tag-i: 3; }
+.tag-row.reveal .tag:nth-child(5)  { --tag-i: 4; }
+.tag-row.reveal .tag:nth-child(6)  { --tag-i: 5; }
+.tag-row.reveal .tag:nth-child(7)  { --tag-i: 6; }
+.tag-row.reveal .tag:nth-child(8)  { --tag-i: 7; }
+.tag-row.reveal .tag:nth-child(9)  { --tag-i: 8; }
+.tag-row.reveal .tag:nth-child(10) { --tag-i: 9; }
+.tag-row.reveal .tag:nth-child(11) { --tag-i: 10; }
+.tag-row.reveal .tag:nth-child(12) { --tag-i: 11; }
 
 /* -------------------------------------------------------------------------
    Mobile nav
@@ -1166,14 +1360,48 @@ p + p { margin-top: var(--space-3); }
 /* -------------------------------------------------------------------------
    Reduced motion
    ------------------------------------------------------------------------- */
+/* Reduced motion = fewer and gentler, not zero: keep color/opacity feedback,
+   remove movement, scaling, and infinite loops */
 @media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+
   *, *::before, *::after {
     animation-duration: 0.001ms !important;
+    animation-delay: 0ms !important;
     animation-iteration-count: 1 !important;
-    transition-duration: 0.001ms !important;
-    scroll-behavior: auto !important;
   }
-  .reveal { opacity: 1; transform: none; }
+
+  /* Entrance states resolve to fully visible, no travel */
+  .reveal,
+  .stat-strip .stat,
+  .tag-row.reveal .tag,
+  .moai-ring, .moai-member, .moai-heart {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  .hero-eyebrow, .hero h1, .hero .lede, .hero-cta, .hero-meta,
+  .hero-illustration, .hero-illustration img, .hero-ring,
+  .moai-ring, .moai-heart-path,
+  .page-header .eyebrow, .page-header h1, .page-header .lede {
+    animation: none !important;
+  }
+  .hero h1 .accent { background-size: 100% 0.26em; }
+
+  /* Interactive elements keep color/shadow transitions but stop moving */
+  .btn, .directory-card, .value-card, .team-card, .project-card,
+  .directory-card-icon, .value-icon {
+    transition-property: background-color, border-color, color, box-shadow;
+  }
+  .btn:hover, .btn:active,
+  .directory-card:hover, .value-card:hover, .team-card:hover,
+  .directory-card:hover .directory-card-icon,
+  .value-card:hover .value-icon,
+  .team-card:hover .team-photo-wrap img,
+  .btn-arrow:hover::after { transform: none !important; }
+
+  .site-nav { transition: none; }
+  .skip-link { transition: none; }
 }
 
 /* -------------------------------------------------------------------------

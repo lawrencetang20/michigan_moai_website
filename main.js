@@ -32,6 +32,25 @@
   }
 
   // -------------------------------------------------------------------------
+  // Header elevation once the page is scrolled
+  // -------------------------------------------------------------------------
+  const header = document.querySelector('.site-header');
+  if (header) {
+    let ticking = false;
+    const updateHeader = () => {
+      header.classList.toggle('is-scrolled', window.scrollY > 8);
+      ticking = false;
+    };
+    updateHeader();
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        ticking = true;
+        requestAnimationFrame(updateHeader);
+      }
+    }, { passive: true });
+  }
+
+  // -------------------------------------------------------------------------
   // Dropdown menus (click / keyboard)
   // -------------------------------------------------------------------------
   const dropdowns = document.querySelectorAll('.dropdown');
