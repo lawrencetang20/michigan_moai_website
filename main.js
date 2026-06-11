@@ -259,6 +259,50 @@
   }
 
   // -------------------------------------------------------------------------
+  // Therapist directory filters (language pills + in-person toggle)
+  // -------------------------------------------------------------------------
+  const therapistList = document.querySelector('.therapist-list');
+  if (therapistList) {
+    const cards = Array.from(therapistList.querySelectorAll('.therapist-card'));
+    const pills = Array.from(document.querySelectorAll('.filter-pill'));
+    const inPersonToggle = document.querySelector('#filter-inperson');
+    const countEl = document.querySelector('.directory-count');
+    const emptyEl = document.querySelector('.directory-empty');
+    let activeLang = 'all';
+
+    const applyFilters = () => {
+      let shown = 0;
+      cards.forEach((card) => {
+        const langs = (card.dataset.langs || '').split(' ');
+        const langOk = activeLang === 'all' || langs.includes(activeLang);
+        const placeOk = !inPersonToggle || !inPersonToggle.checked || card.dataset.inperson === 'true';
+        const visible = langOk && placeOk;
+        card.hidden = !visible;
+        if (visible) shown += 1;
+      });
+      if (emptyEl) emptyEl.hidden = shown !== 0;
+      if (countEl) {
+        countEl.textContent = shown === cards.length
+          ? 'Showing all ' + cards.length + ' therapists'
+          : 'Showing ' + shown + ' of ' + cards.length + ' therapists';
+      }
+    };
+
+    pills.forEach((pill) => {
+      pill.addEventListener('click', () => {
+        activeLang = pill.dataset.lang;
+        pills.forEach((p) => {
+          const isActive = p === pill;
+          p.classList.toggle('is-active', isActive);
+          p.setAttribute('aria-pressed', String(isActive));
+        });
+        applyFilters();
+      });
+    });
+    if (inPersonToggle) inPersonToggle.addEventListener('change', applyFilters);
+  }
+
+  // -------------------------------------------------------------------------
   // Scroll reveal — disabled entirely when reduced motion is requested
   // -------------------------------------------------------------------------
   const reveals = document.querySelectorAll('.reveal');

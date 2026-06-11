@@ -103,15 +103,384 @@
       </div>
     </section>
 
+    <!-- DIRECTORY BROWSER -->
+    <section class="section section--tight" aria-labelledby="directory-heading">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="eyebrow">Browse the directory</span>
+          <h2 id="directory-heading">39 therapists. Find the one who fits.</h2>
+          <p>Finding a therapist is about fit — someone you feel comfortable with, in the language that feels like home. Filter the list, then reach out directly. No sign-up, no referral needed.</p>
+        </div>
+
+        <div class="directory-filters reveal">
+          <div class="filter-group">
+            <span class="filter-label" id="filter-language-label">Language</span>
+            <div class="filter-pills" role="group" aria-labelledby="filter-language-label">
+              <button type="button" class="filter-pill is-active" data-lang="all" aria-pressed="true">All <span class="pill-count">39</span></button>
+              <button type="button" class="filter-pill" data-lang="mandarin" aria-pressed="false">Mandarin <span class="pill-count">13</span></button>
+              <button type="button" class="filter-pill" data-lang="hindi" aria-pressed="false">Hindi <span class="pill-count">11</span></button>
+              <button type="button" class="filter-pill" data-lang="urdu" aria-pressed="false">Urdu <span class="pill-count">5</span></button>
+              <button type="button" class="filter-pill" data-lang="japanese" aria-pressed="false">Japanese <span class="pill-count">4</span></button>
+              <button type="button" class="filter-pill" data-lang="korean" aria-pressed="false">Korean <span class="pill-count">4</span></button>
+              <button type="button" class="filter-pill" data-lang="taiwanese" aria-pressed="false">Taiwanese <span class="pill-count">3</span></button>
+              <button type="button" class="filter-pill" data-lang="cantonese" aria-pressed="false">Cantonese <span class="pill-count">2</span></button>
+              <button type="button" class="filter-pill" data-lang="punjabi" aria-pressed="false">Punjabi <span class="pill-count">2</span></button>
+              <button type="button" class="filter-pill" data-lang="arabic" aria-pressed="false">Arabic <span class="pill-count">1</span></button>
+              <button type="button" class="filter-pill" data-lang="chinese" aria-pressed="false">Chinese <span class="pill-count">1</span></button>
+              <button type="button" class="filter-pill" data-lang="farsi" aria-pressed="false">Farsi <span class="pill-count">1</span></button>
+              <button type="button" class="filter-pill" data-lang="ilonggo" aria-pressed="false">Ilonggo <span class="pill-count">1</span></button>
+              <button type="button" class="filter-pill" data-lang="indonesian" aria-pressed="false">Indonesian <span class="pill-count">1</span></button>
+              <button type="button" class="filter-pill" data-lang="italian" aria-pressed="false">Italian <span class="pill-count">1</span></button>
+              <button type="button" class="filter-pill" data-lang="malay" aria-pressed="false">Malay <span class="pill-count">1</span></button>
+              <button type="button" class="filter-pill" data-lang="marathi" aria-pressed="false">Marathi <span class="pill-count">1</span></button>
+              <button type="button" class="filter-pill" data-lang="minnan" aria-pressed="false">Minnan <span class="pill-count">1</span></button>
+              <button type="button" class="filter-pill" data-lang="spanish" aria-pressed="false">Spanish <span class="pill-count">1</span></button>
+              <button type="button" class="filter-pill" data-lang="tagalog" aria-pressed="false">Tagalog <span class="pill-count">1</span></button>
+              <button type="button" class="filter-pill" data-lang="telugu" aria-pressed="false">Telugu <span class="pill-count">1</span></button>
+              <button type="button" class="filter-pill" data-lang="vietnamese" aria-pressed="false">Vietnamese <span class="pill-count">1</span></button>
+            </div>
+          </div>
+          <label class="filter-toggle">
+            <input type="checkbox" id="filter-inperson" />
+            <span>In-person in Michigan</span>
+          </label>
+        </div>
+
+        <p class="directory-count" role="status" aria-live="polite">Showing all 39 therapists</p>
+
+        <div class="therapist-list">
+          <!-- MICHIGAN -->
+          <article class="therapist-card" data-langs="english japanese chinese" data-inperson="true">
+            <h3>Joyce Kuribayashi <span class="pronouns">(she/her)</span></h3>
+            <p class="therapist-meta">Therapist · Novi, MI · In-person &amp; virtual</p>
+            <p class="therapist-focus">Anxiety, depression, grief, relationship struggles, racial identity — children (10+), adults, couples, families.</p>
+            <div class="tag-row therapist-langs"><span class="tag">Japanese</span><span class="tag">Chinese</span></div>
+            <p class="therapist-contact"><a href="tel:7343234897" class="tabular">(734) 323-4897</a><a href="https://www.galvingrowthgroup.com" target="_blank" rel="noopener">Website</a></p>
+          </article>
+
+          <article class="therapist-card" data-langs="english cantonese" data-inperson="true">
+            <h3>Felice Chen <span class="pronouns">(she/her)</span></h3>
+            <p class="therapist-meta">Pre-licensed clinical psychologist · Ann Arbor, MI · In-person &amp; virtual</p>
+            <p class="therapist-focus">Trauma, family dynamics, eating &amp; body image, neurodivergence, anxiety, identity — adolescents &amp; adults.</p>
+            <div class="tag-row therapist-langs"><span class="tag">Cantonese</span></div>
+            <p class="therapist-contact"><a href="tel:7342195085" class="tabular">(734) 219-5085</a></p>
+          </article>
+
+          <article class="therapist-card" data-langs="english mandarin taiwanese" data-inperson="true">
+            <h3>Shu-Lan Hung <span class="pronouns">(she/her)</span></h3>
+            <p class="therapist-meta">Clinical social worker · Ann Arbor, MI · In-person &amp; virtual</p>
+            <p class="therapist-focus">Trauma, anxiety, depression, grief, life transitions — immigrants, international students, cultural adaptation.</p>
+            <div class="tag-row therapist-langs"><span class="tag">Mandarin</span><span class="tag">Taiwanese</span></div>
+            <p class="therapist-contact"><a href="tel:7342452341" class="tabular">(734) 245-2341</a></p>
+          </article>
+
+          <article class="therapist-card" data-langs="english cantonese mandarin" data-inperson="true">
+            <h3>Shahin Ip <span class="pronouns">(she/her)</span></h3>
+            <p class="therapist-meta">Licensed professional counselor · Troy, MI · In-person &amp; virtual</p>
+            <p class="therapist-focus">Life transitions, cultural identity, grief, interpersonal conflict — EMDR-trained.</p>
+            <div class="tag-row therapist-langs"><span class="tag">Cantonese</span><span class="tag">Mandarin</span></div>
+            <p class="therapist-contact"><a href="tel:5862571257" class="tabular">(586) 257-1257</a></p>
+          </article>
+
+          <article class="therapist-card" data-langs="english mandarin" data-inperson="true">
+            <h3>Sherry (Kuan-Ting) Wu <span class="pronouns">(she/her)</span></h3>
+            <p class="therapist-meta">Therapist · Ann Arbor, MI · In-person &amp; virtual</p>
+            <p class="therapist-focus">Anxiety, stress, trauma, relationship challenges — experience with the autism spectrum, trauma-informed certified.</p>
+            <div class="tag-row therapist-langs"><span class="tag">Mandarin</span></div>
+            <p class="therapist-contact"><a href="tel:7348494870" class="tabular">(734) 849-4870</a><a href="mailto:sherry@jubileexinian.com">Email</a><a href="https://jubileexiniancounseling.com/sherry-kuan-ting-wu" target="_blank" rel="noopener">Website</a></p>
+          </article>
+
+          <article class="therapist-card" data-langs="english mandarin taiwanese minnan" data-inperson="true">
+            <h3>Huan-Hsiang Ueng <span class="pronouns">(he/him)</span></h3>
+            <p class="therapist-meta">Psychologist · Ann Arbor, MI · In-person &amp; virtual</p>
+            <p class="therapist-focus">Depression, anxiety, trauma, ADHD, grief, identity — BIPOC &amp; LGBTQIA+ affirming care.</p>
+            <div class="tag-row therapist-langs"><span class="tag">Mandarin</span><span class="tag">Taiwanese</span><span class="tag">Minnan</span></div>
+            <p class="therapist-contact"><a href="tel:7345856966" class="tabular">(734) 585-6966</a><a href="mailto:info@amplifycolectivo.com">Email</a><a href="https://amplifycolectivo.com/meet-the-colectivo/huan-hsiang-ueng" target="_blank" rel="noopener">Website</a></p>
+          </article>
+
+          <article class="therapist-card" data-langs="english mandarin" data-inperson="true">
+            <h3>Ke Liu <span class="pronouns">(he/him)</span></h3>
+            <p class="therapist-meta">Licensed professional counselor · Ypsilanti &amp; Ann Arbor, MI · In-person &amp; virtual</p>
+            <p class="therapist-focus">Anxiety, OCD, PTSD, unresolved trauma — IFS, EMDR, mindfulness, mind-body approach.</p>
+            <div class="tag-row therapist-langs"><span class="tag">Mandarin</span></div>
+            <p class="therapist-contact"><a href="tel:7343367265" class="tabular">(734) 336-7265</a></p>
+          </article>
+
+          <article class="therapist-card" data-langs="english mandarin" data-inperson="true">
+            <h3>Fan Zhang <span class="pronouns">(he/him)</span></h3>
+            <p class="therapist-meta">Licensed professional counselor (limited) · Troy, Sterling Heights, Royal Oak &amp; West Bloomfield, MI · In-person</p>
+            <p class="therapist-focus">Depression, anxiety, relationship issues, life transitions — adolescents &amp; adults.</p>
+            <div class="tag-row therapist-langs"><span class="tag">Mandarin</span></div>
+            <p class="therapist-contact"><a href="tel:2488621171" class="tabular">(248) 862-1171</a><a href="https://sollarsassociates.com" target="_blank" rel="noopener">Website</a></p>
+          </article>
+
+          <article class="therapist-card" data-langs="english mandarin" data-inperson="true">
+            <h3>Lani Porter Wang <span class="pronouns">(she/her)</span></h3>
+            <p class="therapist-meta">Clinical social worker · Ann Arbor, MI · In-person &amp; virtual</p>
+            <p class="therapist-focus">Life transitions, relationships, academic stress, cultural integration, family dynamics — CBT-I certified for insomnia.</p>
+            <div class="tag-row therapist-langs"><span class="tag">Mandarin</span></div>
+            <p class="therapist-contact"><a href="tel:7345303176" class="tabular">(734) 530-3176</a></p>
+          </article>
+
+          <article class="therapist-card" data-langs="english" data-inperson="true">
+            <h3>Yeiri Kim <span class="pronouns">(she/her)</span></h3>
+            <p class="therapist-meta">Psychologist (limited license) · Bloomfield Hills, MI · In-person &amp; virtual · Waitlist only</p>
+            <p class="therapist-focus">Anxiety, depression, trauma, grief, identity conflict — ADHD &amp; learning assessments.</p>
+            <div class="tag-row therapist-langs"><span class="tag">English</span></div>
+            <p class="therapist-contact"><a href="tel:2482834997" class="tabular">(248) 283-4997</a></p>
+          </article>
+
+          <article class="therapist-card" data-langs="english korean" data-inperson="true">
+            <h3>Minjung Kang</h3>
+            <p class="therapist-meta">Counselor · Troy, MI · In-person &amp; virtual</p>
+            <p class="therapist-focus">Anxiety, depression, trauma, relationship challenges — individuals, couples &amp; families; children to adults.</p>
+            <div class="tag-row therapist-langs"><span class="tag">Korean</span></div>
+            <p class="therapist-contact"><a href="tel:2489271859" class="tabular">(248) 927-1859</a></p>
+          </article>
+
+          <article class="therapist-card" data-langs="english korean" data-inperson="true">
+            <h3>Reyna Choi <span class="pronouns">(she/her)</span></h3>
+            <p class="therapist-meta">Therapist (LLMSW) · Lansing, MI · In-person &amp; virtual</p>
+            <p class="therapist-focus">ADHD, anxiety, depression, executive dysfunction, grief — immigration stress &amp; intergenerational challenges.</p>
+            <div class="tag-row therapist-langs"><span class="tag">Korean</span></div>
+            <p class="therapist-contact"><a href="tel:5176670061" class="tabular">(517) 667-0061</a><a href="https://www.guidetopersonalsolutions.com" target="_blank" rel="noopener">Website</a></p>
+          </article>
+
+          <article class="therapist-card" data-langs="english korean" data-inperson="false">
+            <h3>Ami Sung <span class="pronouns">(she/her)</span></h3>
+            <p class="therapist-meta">Psychologist · Michigan · Virtual only</p>
+            <p class="therapist-focus">Anxiety, depression, trauma, identity, cultural &amp; ethnic issues — EMDR-certified therapist and consultant.</p>
+            <div class="tag-row therapist-langs"><span class="tag">Korean</span></div>
+            <p class="therapist-contact"><a href="https://care.headway.co/providers/ami-sung" target="_blank" rel="noopener">Website</a></p>
+          </article>
+
+          <article class="therapist-card" data-langs="english" data-inperson="true">
+            <h3>Kamille La Rosa <span class="pronouns">(she/they/siya)</span></h3>
+            <p class="therapist-meta">Counseling psychologist · Ypsilanti, MI · In-person &amp; virtual</p>
+            <p class="therapist-focus">Asian/Asian American identity, historical trauma, anxiety, depression, immigrant family dynamics, neurodiversity, eating disorders.</p>
+            <div class="tag-row therapist-langs"><span class="tag">English</span></div>
+            <p class="therapist-contact"><a href="tel:7349456210" class="tabular">(734) 945-6210</a><a href="mailto:administration@integrativeempowerment.com">Email</a><a href="https://integrativeempowerment.com" target="_blank" rel="noopener">Website</a></p>
+          </article>
+
+          <article class="therapist-card" data-langs="english tagalog ilonggo" data-inperson="true">
+            <h3>Karin Van Ast <span class="pronouns">(she/her)</span></h3>
+            <p class="therapist-meta">Licensed professional counselor · Grand Rapids, MI · In-person &amp; virtual</p>
+            <p class="therapist-focus">Children, teens &amp; families — anxiety, school issues, adoption, foster care; art, play, music &amp; writing.</p>
+            <div class="tag-row therapist-langs"><span class="tag">Tagalog</span><span class="tag">Ilonggo</span></div>
+            <p class="therapist-contact"><a href="tel:6167798139" class="tabular">(616) 779-8139</a></p>
+          </article>
+
+          <article class="therapist-card" data-langs="english hindi punjabi urdu" data-inperson="true">
+            <h3>Lydia Lamba <span class="pronouns">(she/her)</span></h3>
+            <p class="therapist-meta">Clinical social worker (LLMSW) · Bingham Farms, MI · In-person &amp; virtual</p>
+            <p class="therapist-focus">Intergenerational trauma, immigration-related stress, racial identity, family expectations, cultural stigma.</p>
+            <div class="tag-row therapist-langs"><span class="tag">Hindi</span><span class="tag">Punjabi</span><span class="tag">Urdu</span></div>
+            <p class="therapist-contact"><a href="tel:2484221673" class="tabular">(248) 422-1673</a></p>
+          </article>
+
+          <article class="therapist-card" data-langs="hindi punjabi" data-inperson="true">
+            <h3>Akanksha Madan <span class="pronouns">(she/her)</span></h3>
+            <p class="therapist-meta">Licensed professional counselor · Michigan · In-person &amp; virtual</p>
+            <p class="therapist-focus">Betrayal trauma, infidelity, complex relational dynamics — individuals &amp; couples; EMDR, Gottman Method.</p>
+            <div class="tag-row therapist-langs"><span class="tag">Hindi</span><span class="tag">Punjabi</span></div>
+            <p class="therapist-contact"><a href="mailto:akanksha@thrivebeyondtraumacounseling.com">Email</a><a href="https://thrivebeyondtraumacounseling.com" target="_blank" rel="noopener">Website</a></p>
+          </article>
+
+          <article class="therapist-card" data-langs="english hindi urdu" data-inperson="true">
+            <h3>Rini Kaushal <span class="pronouns">(she/her)</span></h3>
+            <p class="therapist-meta">Marriage &amp; family therapist (LLMFT) · Ann Arbor, MI · In-person &amp; virtual</p>
+            <p class="therapist-focus">Relationship challenges, marital conflict, intimacy, generational trauma, family communication.</p>
+            <div class="tag-row therapist-langs"><span class="tag">Hindi</span><span class="tag">Urdu</span></div>
+            <p class="therapist-contact"><a href="tel:7345378005" class="tabular">(734) 537-8005</a></p>
+          </article>
+
+          <article class="therapist-card" data-langs="english farsi hindi urdu spanish" data-inperson="true">
+            <h3>Razia Muhamadi <span class="pronouns">(she/her)</span></h3>
+            <p class="therapist-meta">Clinical social worker (LMSW) · Dexter &amp; Plymouth, MI · In-person &amp; virtual</p>
+            <p class="therapist-focus">Depression, anxiety, trauma, grief, life transitions — certified in trauma treatment (CTP).</p>
+            <div class="tag-row therapist-langs"><span class="tag">Farsi</span><span class="tag">Hindi</span><span class="tag">Urdu</span><span class="tag">Spanish</span></div>
+            <p class="therapist-contact"><a href="tel:7342122718" class="tabular">(734) 212-2718</a></p>
+          </article>
+
+          <article class="therapist-card" data-langs="english hindi urdu italian" data-inperson="false">
+            <h3>Sara Beg <span class="pronouns">(she/her)</span></h3>
+            <p class="therapist-meta">Licensed professional counselor · Virtual (MI, TX &amp; FL)</p>
+            <p class="therapist-focus">Anxiety, depression, trauma, racial identity, perinatal mental health — children, teens &amp; adults.</p>
+            <div class="tag-row therapist-langs"><span class="tag">Hindi</span><span class="tag">Urdu</span><span class="tag">Italian</span></div>
+            <p class="therapist-contact"><a href="tel:8323654918" class="tabular">(832) 365-4918</a></p>
+          </article>
+
+          <article class="therapist-card" data-langs="english hindi urdu" data-inperson="true">
+            <h3>Vinata Iyer <span class="pronouns">(she/her)</span></h3>
+            <p class="therapist-meta">Licensed professional counselor · Clarkston, MI · In-person &amp; virtual</p>
+            <p class="therapist-focus">Anxiety, depression, trauma, life transitions, relationships — individuals, couples &amp; families.</p>
+            <div class="tag-row therapist-langs"><span class="tag">Hindi</span><span class="tag">Urdu</span></div>
+            <p class="therapist-contact"><a href="tel:9473005798" class="tabular">(947) 300-5798</a></p>
+          </article>
+
+          <article class="therapist-card" data-langs="english hindi telugu" data-inperson="false">
+            <h3>Rohini Kamakoti <span class="pronouns">(she/her)</span></h3>
+            <p class="therapist-meta">Psychologist (LLP) · Rochester Hills, MI · Virtual only</p>
+            <p class="therapist-focus">Mood disorders, anxiety, depression — 23+ years of experience; adults &amp; older adults.</p>
+            <div class="tag-row therapist-langs"><span class="tag">Hindi</span><span class="tag">Telugu</span></div>
+            <p class="therapist-contact"><a href="tel:9478889850" class="tabular">(947) 888-9850</a></p>
+          </article>
+
+          <article class="therapist-card" data-langs="english hindi" data-inperson="true">
+            <h3>Indira J. Hall <span class="pronouns">(she/her)</span></h3>
+            <p class="therapist-meta">Clinical social worker (LMSW) · Waterford &amp; Royal Oak, MI · In-person &amp; virtual</p>
+            <p class="therapist-focus">Family conflict, depression, addiction, trauma — 40+ years of experience across all ages.</p>
+            <div class="tag-row therapist-langs"><span class="tag">Hindi</span></div>
+            <p class="therapist-contact"><a href="tel:2484703003" class="tabular">(248) 470-3003</a></p>
+          </article>
+
+          <article class="therapist-card" data-langs="english hindi marathi" data-inperson="true">
+            <h3>Devina Smith <span class="pronouns">(she/her)</span></h3>
+            <p class="therapist-meta">Licensed professional counselor · Bloomfield Hills, MI · In-person &amp; virtual</p>
+            <p class="therapist-focus">Early childhood trauma, attachment wounds, emotional dysregulation, relationship challenges.</p>
+            <div class="tag-row therapist-langs"><span class="tag">Hindi</span><span class="tag">Marathi</span></div>
+            <p class="therapist-contact"><a href="tel:2485606478" class="tabular">(248) 560-6478</a></p>
+          </article>
+
+          <article class="therapist-card" data-langs="english arabic" data-inperson="false">
+            <h3>Jana Al-Nahhas <span class="pronouns">(she/her)</span></h3>
+            <p class="therapist-meta">Licensed professional counselor · Virtual (MI &amp; IL)</p>
+            <p class="therapist-focus">Anxiety, trauma, coping skills — values-based, somatic &amp; trauma-informed approach.</p>
+            <div class="tag-row therapist-langs"><span class="tag">Arabic</span></div>
+            <p class="therapist-contact"><a href="tel:2482834468" class="tabular">(248) 283-4468</a></p>
+          </article>
+
+          <article class="therapist-card" data-langs="english vietnamese" data-inperson="true">
+            <h3>Carolyn Thao Phan <span class="pronouns">(she/her)</span></h3>
+            <p class="therapist-meta">Therapist (LMSW) · Michigan · In-person &amp; virtual</p>
+            <p class="therapist-focus">Anxiety, grief, depression, trauma, intergenerational healing — adult children of immigrants; 20+ years.</p>
+            <div class="tag-row therapist-langs"><span class="tag">Vietnamese</span></div>
+            <p class="therapist-contact"><a href="https://brightspottherapy.com" target="_blank" rel="noopener">Website</a></p>
+          </article>
+
+          <!-- PSYPACT (TELEHEALTH INTO MICHIGAN) -->
+          <article class="therapist-card" data-langs="english mandarin" data-inperson="false">
+            <h3>Kai Shin Chu <span class="pronouns">(she/her)</span></h3>
+            <p class="therapist-meta">Psychologist · Telehealth via PSYPACT</p>
+            <p class="therapist-focus">Anxiety disorders, OCD, phobias, stress, multicultural &amp; family therapy — LGBTQ+ affirming.</p>
+            <div class="tag-row therapist-langs"><span class="tag">Mandarin</span></div>
+            <p class="therapist-contact"><a href="tel:8133479681" class="tabular">(813) 347-9681</a><a href="mailto:jchu@drchupsychology.com">Email</a><a href="https://www.drchupsychology.com" target="_blank" rel="noopener">Website</a></p>
+          </article>
+
+          <article class="therapist-card" data-langs="english mandarin" data-inperson="false">
+            <h3>Lei Wang <span class="pronouns">(she/her)</span></h3>
+            <p class="therapist-meta">Psychologist · Telehealth via PSYPACT</p>
+            <p class="therapist-focus">Anxiety, life transitions, identity, relationships, career — college students, immigrants, academia.</p>
+            <div class="tag-row therapist-langs"><span class="tag">Mandarin</span></div>
+            <p class="therapist-contact"><a href="https://www.drleiwang.com" target="_blank" rel="noopener">Website</a></p>
+          </article>
+
+          <article class="therapist-card" data-langs="english hindi" data-inperson="false">
+            <h3>Kavita Sekhsaria <span class="pronouns">(she/her)</span></h3>
+            <p class="therapist-meta">Psychologist · Telehealth via PSYPACT</p>
+            <p class="therapist-focus">Relationships, stress, spirituality — strengths-based, culturally sensitive, non-judgmental.</p>
+            <div class="tag-row therapist-langs"><span class="tag">Hindi</span></div>
+            <p class="therapist-contact"><a href="tel:2404284941" class="tabular">(240) 428-4941</a><a href="mailto:kavita@kpspsychotherapy.com">Email</a></p>
+          </article>
+
+          <article class="therapist-card" data-langs="english hindi" data-inperson="false">
+            <h3>Divya Nawal Rai <span class="pronouns">(she/her)</span></h3>
+            <p class="therapist-meta">Psychologist · Telehealth via PSYPACT</p>
+            <p class="therapist-focus">Depression, anxiety, PTSD, grief, life transitions — 17+ years; LGBTQ+ &amp; multicultural affirming.</p>
+            <div class="tag-row therapist-langs"><span class="tag">Hindi</span></div>
+            <p class="therapist-contact"><a href="tel:7542735439" class="tabular">(754) 273-5439</a><a href="mailto:dr.divyanawalrai@gmail.com">Email</a><a href="https://www.psychologytoday.com/profile/1502460" target="_blank" rel="noopener">Website</a></p>
+          </article>
+
+          <article class="therapist-card" data-langs="english indonesian malay" data-inperson="false">
+            <h3>Sonia Dhaliwal <span class="pronouns">(she/her)</span></h3>
+            <p class="therapist-meta">Psychologist · Telehealth via PSYPACT</p>
+            <p class="therapist-focus">Anxiety, depression, trauma, grief — immigrant &amp; multicultural communities, medical professionals, veterans.</p>
+            <div class="tag-row therapist-langs"><span class="tag">Indonesian</span><span class="tag">Malay</span></div>
+            <p class="therapist-contact"><a href="tel:7252359200" class="tabular">(725) 235-9200</a><a href="mailto:soniadhal@gmail.com">Email</a><a href="https://dhpsychservice.com/" target="_blank" rel="noopener">Website</a></p>
+          </article>
+
+          <article class="therapist-card" data-langs="english japanese" data-inperson="false">
+            <h3>Akiko Motomura <span class="pronouns">(she/her)</span></h3>
+            <p class="therapist-meta">Psychologist · Telehealth via PSYPACT</p>
+            <p class="therapist-focus">Trauma, anxiety, depression, grief, identity — abuse survivors, immigrants, relational trauma.</p>
+            <div class="tag-row therapist-langs"><span class="tag">Japanese</span></div>
+            <p class="therapist-contact"><a href="tel:4125739851" class="tabular">(412) 573-9851</a><a href="mailto:hello@doctor-akiko.com">Email</a><a href="https://doctor-akiko.com" target="_blank" rel="noopener">Website</a></p>
+          </article>
+
+          <article class="therapist-card" data-langs="english japanese" data-inperson="false">
+            <h3>Linda Inatsuka <span class="pronouns">(she/her)</span></h3>
+            <p class="therapist-meta">Psychologist · Telehealth via PSYPACT</p>
+            <p class="therapist-focus">Anxiety, depression, relationships, health psychology, multicultural stress, women's issues — 25+ years.</p>
+            <div class="tag-row therapist-langs"><span class="tag">Japanese</span></div>
+            <p class="therapist-contact"><a href="tel:8139856121" class="tabular">(813) 985-6121</a><a href="mailto:info@liveempowered.com">Email</a><a href="https://www.liveempowered.com" target="_blank" rel="noopener">Website</a></p>
+          </article>
+
+          <article class="therapist-card" data-langs="english japanese" data-inperson="false">
+            <h3>Ryoichi Noguchi <span class="pronouns">(he/him)</span></h3>
+            <p class="therapist-meta">Clinical psychologist · Telehealth via PSYPACT</p>
+            <p class="therapist-focus">CBT for anxiety, depression, OCD, ADHD, relationship issues, stress.</p>
+            <div class="tag-row therapist-langs"><span class="tag">Japanese</span></div>
+            <p class="therapist-contact"><a href="tel:2028889183" class="tabular">(202) 888-9183</a><a href="mailto:info@dccbt.com">Email</a><a href="https://dccbt.com" target="_blank" rel="noopener">Website</a></p>
+          </article>
+
+          <article class="therapist-card" data-langs="english korean" data-inperson="false">
+            <h3>Heejin Kim</h3>
+            <p class="therapist-meta">Psychologist · Telehealth via PSYPACT</p>
+            <p class="therapist-focus">Trauma, academic stress, identity, immigration — race, gender &amp; culture; 10+ years in college counseling.</p>
+            <div class="tag-row therapist-langs"><span class="tag">Korean</span></div>
+            <p class="therapist-contact"><a href="tel:2152806870" class="tabular">(215) 280-6870</a><a href="mailto:heejinkim2013@gmail.com">Email</a><a href="https://www.heejinkimphd.com" target="_blank" rel="noopener">Website</a></p>
+          </article>
+
+          <article class="therapist-card" data-langs="english mandarin" data-inperson="false">
+            <h3>Sharon Huang <span class="pronouns">(she/her)</span></h3>
+            <p class="therapist-meta">Psychologist · Telehealth via PSYPACT</p>
+            <p class="therapist-focus">Children, adolescents &amp; young adults — anxiety, ADHD, autism, trauma, learning disorders; IEP &amp; 504 planning.</p>
+            <div class="tag-row therapist-langs"><span class="tag">Mandarin</span></div>
+            <p class="therapist-contact"><a href="tel:3012848123" class="tabular">(301) 284-8123</a><a href="mailto:sharonhuang.phd@gmail.com">Email</a><a href="https://www.harmonypsychological.com" target="_blank" rel="noopener">Website</a></p>
+          </article>
+
+          <article class="therapist-card" data-langs="english mandarin" data-inperson="false">
+            <h3>Jerrold Yeo Jun Tian <span class="pronouns">(he/him)</span></h3>
+            <p class="therapist-meta">Clinical psychologist · Telehealth via PSYPACT</p>
+            <p class="therapist-focus">Neuropsychology &amp; rehabilitation — brain &amp; spinal cord injuries, stroke, chronic conditions, geriatric care.</p>
+            <div class="tag-row therapist-langs"><span class="tag">Mandarin</span></div>
+            <p class="therapist-contact"><a href="tel:8782279736" class="tabular">(878) 227-9736</a><a href="mailto:info@jyeopsyd.com">Email</a><a href="https://www.jyeopsyd.com" target="_blank" rel="noopener">Website</a></p>
+          </article>
+
+          <article class="therapist-card" data-langs="english mandarin taiwanese" data-inperson="false">
+            <h3>H. Cynthia Lin <span class="pronouns">(she/her)</span></h3>
+            <p class="therapist-meta">Clinical psychologist · Telehealth via PSYPACT</p>
+            <p class="therapist-focus">Health psychology, stress management, behavioral medicine, sleep difficulties, educational assessments.</p>
+            <div class="tag-row therapist-langs"><span class="tag">Mandarin</span><span class="tag">Taiwanese</span></div>
+            <p class="therapist-contact"><a href="tel:6464509969" class="tabular">(646) 450-9969</a><a href="mailto:Admin@CitylinkPsych.com">Email</a><a href="https://www.citylinkpsych.com" target="_blank" rel="noopener">Website</a></p>
+          </article>
+
+          <article class="therapist-card" data-langs="english mandarin" data-inperson="false">
+            <h3>Mandy Lu <span class="pronouns">(she/her)</span></h3>
+            <p class="therapist-meta">Clinical psychologist · Telehealth via PSYPACT</p>
+            <p class="therapist-focus">Anxiety, depression, identity, burnout, people-pleasing, perfectionism — accepting new patients.</p>
+            <div class="tag-row therapist-langs"><span class="tag">Mandarin</span></div>
+            <p class="therapist-contact"><a href="tel:4254050648" class="tabular">(425) 405-0648</a><a href="mailto:mandylupsyd@gmail.com">Email</a><a href="https://www.evergreen-psychology.com" target="_blank" rel="noopener">Website</a></p>
+          </article>
+        </div>
+
+        <div class="directory-empty callout callout-mint" hidden>
+          <div class="callout-content">
+            <p><strong>No therapists match those filters.</strong> Try clearing a filter — or email <a href="mailto:support@michiganmoai.org">support@michiganmoai.org</a> and we'll personally help you find someone who fits.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- DOWNLOAD CTA -->
     <section class="section section--tight">
       <div class="container">
         <div class="split">
           <div class="split-content reveal">
-            <span class="eyebrow">How it works</span>
-            <h2 style="margin-top: var(--space-3); margin-bottom: var(--space-4);">Download the directory. Reach out at your own pace.</h2>
+            <span class="eyebrow">Prefer a PDF?</span>
+            <h2 style="margin-top: var(--space-3); margin-bottom: var(--space-4);">Take the directory with you.</h2>
             <p class="lede">
-              The directory is a single PDF — easy to read offline, share with family, or print. Every therapist listed has demonstrated cultural competency and experience supporting individuals affected by hate crimes, racial bias, bullying, and related trauma.
+              The same directory as a single PDF — easy to read offline, share with family, or print. Every therapist listed has demonstrated cultural competency and experience supporting individuals affected by hate crimes, racial bias, bullying, and related trauma.
             </p>
 
             <div style="display: flex; gap: var(--space-3); flex-wrap: wrap; margin-top: var(--space-6);">
@@ -138,7 +507,7 @@
                 <circle class="ring-dot ring-dot--amber" cx="140.9" cy="20.2" r="3"/>
               </g>
             </svg>
-            <img src="/pngs/directory.png" alt="" />
+            <img src="/pngs/directory.png" alt="" loading="lazy" />
           </div>
         </div>
       </div>
@@ -214,20 +583,25 @@
           <p>The directory includes providers who offer sessions in the following AANHPI languages, in addition to English.</p>
         </div>
         <div class="tag-row reveal" style="justify-content: center;">
-          <span class="tag">Mandarin · 普通话</span>
-          <span class="tag">Cantonese · 廣東話</span>
-          <span class="tag">Vietnamese · Tiếng Việt</span>
-          <span class="tag">Korean · 한국어</span>
+          <span class="tag">Mandarin · <span lang="zh-Hans">普通话</span></span>
+          <span class="tag">Cantonese · <span lang="zh-Hant">廣東話</span></span>
+          <span class="tag">Taiwanese · <span lang="zh-Hant">台語</span></span>
+          <span class="tag">Minnan · <span lang="zh-Hant">閩南語</span></span>
+          <span class="tag">Japanese · <span lang="ja">日本語</span></span>
+          <span class="tag">Korean · <span lang="ko">한국어</span></span>
+          <span class="tag">Vietnamese · <span lang="vi">Tiếng Việt</span></span>
           <span class="tag">Tagalog</span>
-          <span class="tag">Hindi · हिन्दी</span>
-          <span class="tag">Urdu · اُردُو</span>
-          <span class="tag">Japanese · 日本語</span>
-          <span class="tag">Tamil · தமிழ்</span>
-          <span class="tag">Bengali · বাংলা</span>
-          <span class="tag">Gujarati · ગુજરાતી</span>
-          <span class="tag">Punjabi · ਪੰਜਾਬੀ</span>
+          <span class="tag">Ilonggo</span>
+          <span class="tag">Hindi · <span lang="hi">हिन्दी</span></span>
+          <span class="tag">Urdu · <span lang="ur">اُردُو</span></span>
+          <span class="tag">Punjabi · <span lang="pa">ਪੰਜਾਬੀ</span></span>
+          <span class="tag">Telugu · <span lang="te">తెలుగు</span></span>
+          <span class="tag">Marathi · <span lang="mr">मराठी</span></span>
+          <span class="tag">Indonesian · <span lang="id">Bahasa Indonesia</span></span>
+          <span class="tag">Malay · <span lang="ms">Bahasa Melayu</span></span>
         </div>
         <p style="text-align: center; margin-top: var(--space-5); color: var(--text-dim); font-size: var(--fs-14);">
+          Several therapists also offer sessions in Farsi, Arabic, Spanish, and Italian.<br />
           Don't see your language? <a href="mailto:support@michiganmoai.org?subject=Language%20request">Tell us</a> — we'll search for a provider and update the directory.
         </p>
       </div>
@@ -238,7 +612,7 @@
       <div class="container container-narrow">
         <div class="crisis-note reveal" role="note">
           <p>
-            <strong>In crisis right now?</strong> Call or text <strong>988</strong> to reach the 988 Suicide &amp; Crisis Lifeline — free, confidential, 24/7. The line offers <a href="https://988lifeline.org/help-yourself/asian-american-pacific-islander/" target="_blank" rel="noopener">AANHPI-specific support</a> and interpreters in 240+ languages.
+            <strong>In crisis right now?</strong> <a href="tel:988">Call 988</a> or <a href="sms:988">text 988</a> — a trained counselor answers, free and confidential, 24/7. The line offers <a href="https://988lifeline.org/help-yourself/asian-american-pacific-islander/" target="_blank" rel="noopener">AANHPI-specific support</a> and interpreters in 240+ languages.
           </p>
         </div>
       </div>
@@ -294,7 +668,7 @@
       </div>
       <div class="footer-bottom">
         <p>&copy; 2026 Michigan Moai &middot; A nonprofit organization</p>
-        <p>In crisis? Call or text <a href="tel:988">988</a></p>
+        <p>In crisis? <a href="tel:988">Call</a> or <a href="sms:988">text</a> 988</p>
       </div>
     </div>
   </footer>
